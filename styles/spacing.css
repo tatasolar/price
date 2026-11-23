@@ -1,0 +1,94 @@
+/*
+ * Spacing Scale
+ * Mobile-first. Breakpoints follow AGENTS.md: 600px / 900px / 1200px.
+ *
+ * Quick reference (desktop ≥1200px values):
+ *   --spacing-01:  4px
+ *   --spacing-02:  8px
+ *   --spacing-03: 12px
+ *   --spacing-04: 16px
+ *   --spacing-05: 24px
+ *   --spacing-06: 32px
+ *   --spacing-07: 40px
+ *   --spacing-08: 48px
+ *   --spacing-09: 56px
+ *   --spacing-10: 64px
+ *   --spacing-11: 72px
+ *   --spacing-12: 80px
+ *   --spacing-13: 96px
+ *   --spacing-14: 120px
+ */
+
+/* ── Mobile (<600px) — base values ── */
+:root {
+  --spacing-01: 4px;
+  --spacing-02: 8px;
+  --spacing-03: 8px;
+  --spacing-04: 8px;
+  --spacing-05: 12px;
+  --spacing-06: 16px;
+  --spacing-07: 24px;
+  --spacing-08: 32px;
+  --spacing-09: 40px;
+  --spacing-10: 48px;
+  --spacing-11: 56px;
+  --spacing-12: 64px;
+  --spacing-13: 72px;
+  --spacing-14: 80px;
+
+  /* ── Container / layout ── */
+  --container-padding-x: var(--spacing-06);  /* 16px mobile */
+  --container-max-width: 1440px;
+  --section-padding-x: var(--spacing-06);    /* 16px mobile */
+
+  /* ── Named aliases ──
+     Semantic shortcuts so authors don't need to remember the
+     numeric scale. Values update automatically per breakpoint. */
+  --space-xs:  var(--spacing-01);   /*  4px */
+  --space-sm:  var(--spacing-02);   /*  8px */
+  --space-md:  var(--spacing-06);   /* 16px → 24px → 32px */
+  --space-lg:  var(--spacing-07);   /* 24px → 32px → 40px */
+  --space-xl:  var(--spacing-08);   /* 32px → 40px → 48px */
+  --space-2xl: var(--spacing-10);   /* 48px → 56px → 64px */
+  --space-3xl: var(--spacing-12);   /* 64px → 72px → 80px */
+  --space-4xl: var(--spacing-14);   /* 80px → 96px → 120px */
+}
+
+/* ── Tablet (≥600px) ── */
+@media (width >= 600px) {
+  :root {
+    --spacing-04: 12px;
+    --spacing-05: 16px;
+    --spacing-06: 24px;
+    --spacing-07: 32px;
+    --spacing-08: 40px;
+    --spacing-09: 48px;
+    --spacing-10: 56px;
+    --spacing-11: 64px;
+    --spacing-12: 72px;
+    --spacing-13: 80px;
+    --spacing-14: 96px;
+    --container-padding-x: var(--spacing-06);
+    --section-padding-x: var(--spacing-06);
+  }
+}
+
+/* ── Desktop (≥1200px) ── */
+@media (width >= 1200px) {
+  :root {
+    --spacing-03: 12px;
+    --spacing-04: 16px;
+    --spacing-05: 24px;
+    --spacing-06: 32px;
+    --spacing-07: 40px;
+    --spacing-08: 48px;
+    --spacing-09: 56px;
+    --spacing-10: 64px;
+    --spacing-11: 72px;
+    --spacing-12: 80px;
+    --spacing-13: 96px;
+    --spacing-14: 120px;
+    --container-padding-x: 80px;
+    --section-padding-x: 80px;
+  }
+}

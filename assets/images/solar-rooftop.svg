@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title description">
+  <title id="title">Rooftop solar illustration</title>
+  <desc id="description">Solar panels on a modern rooftop with sunlight and greenery.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8d98b"/>
+      <stop offset=".52" stop-color="#89c8c0"/>
+      <stop offset="1" stop-color="#2d7787"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbfc"/>
+      <stop offset="1" stop-color="#cedbe1"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2b6584"/>
+      <stop offset="1" stop-color="#102f4b"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#fff5c8" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#fff5c8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-.25" y="-.25" width="1.5" height="1.6">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#071e31" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <circle cx="714" cy="210" r="220" fill="url(#glow)"/>
+  <circle cx="714" cy="210" r="73" fill="#f3c666"/>
+  <path d="M92 256c17-39 70-49 101-18 17-44 87-48 109-3 39-12 75 13 77 48H93c-7-8-7-18-1-27Z" fill="#eff7f4" opacity=".8"/>
+  <path d="M118 472 478 300l363 173v166H118Z" fill="url(#roof)" filter="url(#shadow)"/>
+  <path d="m93 478 385-201 390 201-29 31-361-184-353 183Z" fill="#aabdc8"/>
+  <path d="m345 382 264-119 268 126-269 128Z" fill="url(#panel)" stroke="#d4e5e8" stroke-width="9" stroke-linejoin="round"/>
+  <g fill="none" stroke="#90b5c2" stroke-width="5" opacity=".9">
+    <path d="m430 343 268 129"/>
+    <path d="m514 305 269 129"/>
+    <path d="m394 359 265 128"/>
+    <path d="m427 344-45 99"/>
+    <path d="m512 305-43 100"/>
+    <path d="m599 263-43 101"/>
+    <path d="m686 304-43 101"/>
+    <path d="m774 346-43 101"/>
+  </g>
+  <path d="M118 503 478 687l363-184v124L478 705 118 627Z" fill="#d9e4e9"/>
+  <path d="M118 627 478 705l363-78v31L478 735 118 658Z" fill="#a8bac4"/>
+  <path d="M118 531 478 714M841 531 478 714" stroke="#bacad1" stroke-width="5" opacity=".75"/>
+  <g fill="#4d9b7c">
+    <path d="M790 589c-28-67-11-104 23-127 26 44 26 83-23 127Z"/>
+    <path d="M830 622c-3-69 24-99 65-105 8 51-6 87-65 105Z"/>
+    <path d="M747 623c-11-58 5-91 43-107 18 42 13 75-43 107Z"/>
+  </g>
+  <path d="M818 626v-70M839 632l30-74M776 636l5-69" stroke="#d4e2c6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M164 583c-17-41-7-65 14-80 17 28 17 53-14 80ZM183 604c-2-45 16-65 42-69 5 33-4 57-42 69Z" fill="#67aa88"/>
+</svg>

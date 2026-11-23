@@ -1,0 +1,1846 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+@import url('./spacing.css');
+@import url('./fonts.css');
+
+:root {
+	/* ================= Fonts ================= */
+	--font-outfit: "Noto Sans Devanagari", sans-serif;
+	--font-syne: "Noto Sans Devanagari", sans-serif;
+
+	/* ================= Font Weights ================= */
+
+	--weight-300: 300;
+	--weight-400: 400;
+	--weight-500: 500;
+	--weight-600: 600;
+	--weight-700: 700;
+	--weight-800: 800;
+	--weight-900: 900;
+	--weight-light: var(--weight-300);
+	--weight-regular: var(--weight-400);
+	--weight-medium: var(--weight-500);
+	--weight-semibold: var(--weight-600);
+	--weight-bold: var(--weight-700);
+	--weight-extra-bold: var(--weight-900);
+
+	/* ================= Font Sizes ================= */
+
+	--fs-base: 1rem; /* 16px */
+	--fs-h1: 1.5rem; /* 24px */
+	--fs-h2: 1.375rem; /* 22px */
+	--fs-h3: 1.25rem; /* 20px */
+	--fs-h4: 1.125rem; /* 18px */
+	--fs-h5: 1rem; /* 16px */
+	--fs-small: 0.875rem; /* 14px */
+	--fs-xsmall: 0.75rem; /* 12px */
+	--fs-large: 2rem; /* 32px */
+	--fs-xlarge: 3rem; /* 48px */
+	--fs-10: 0.625rem;
+	--fs-11: 0.6875rem;
+	--fs-13: 0.8125rem;
+	--fs-15: 0.9375rem;
+	--fs-30: 1.875rem;
+	--fs-31: 1.9375rem;
+	--fs-36: 2.25rem;
+	--fs-40: 2.5rem;
+	--fs-56: 3.5rem;
+	--fs-60: 3.75rem;
+	--fs-64: 4rem;
+	--fs-72: 4.5rem;
+	--fs-subhead: 1rem;
+	--fs-card-title: 1.125rem;
+	--fs-card-center-title: 1.125rem;
+	--fs-route-nav: 1.5rem;
+	--fs-testimonial-title: 1.125rem;
+
+	/* ================= Line Heights ================= */
+
+	--lh-default: 1;
+	--lh-default-mobile: 1.2;
+	--lh-base: 1.5;
+	--lh-large: 2.375;
+	--lh-medium: 3;
+	--lh-xlarge: 3.625;
+	--lh-small: 1.3125;
+
+	/* ================= Core Colors ================= */
+
+	--color-black: #1c1c1c;
+	--color-dark-black: #000;
+	--color-white: #fff;
+	--color-foreground: #202020;
+	--color-background: #ececec;
+	--color-link: inherit;
+
+	/* ================= Oceanic Green ================= */
+	--bg-color: #01211d;
+	--green-primary: #062824;
+	--green-primary-light: #385350;
+	--green-secondary: #6a7e7c;
+	--green-secondary-light: #9ba9a7;
+	--green-light: #cdd4d3;
+	--green-extra-light: #e6e9e9;
+	--green-secondary-lightest: #e8f6dd;
+	--gray-clear: #666;
+
+	/* ================= Ivory Mist ================= */
+
+	--ivory-primary: #f8f5ec;
+	--ivory-dark: #f9f7f0;
+	--ivory-light: #fbf9f4;
+	--ivory-extra-light: #fcfbf7;
+
+	/* ================= Blue Shades ================= */
+
+	--blue-primary: #023e8a;
+	--blue-light: #2c96f8;
+	--blue-medium: #1a559c;
+	--blue-light-20: #009ada;
+	--blue-searchroute: #225c9f;
+
+	/* ================= Midnight Shades ================= */
+
+	--midnight-primary: #202020;
+	--midnight-20: #2d2d2c;
+	--midnight-dark: #4d4d4d;
+	--midnight-medium: #797979;
+	--midnight-light: #a6a6a6;
+
+	/* ================= Spring Green ================= */
+
+	--spring-green-primary: #03ffab;
+	--spring-green-dark: #35ffbc;
+	--spring-green-light: #68ffcd;
+	--spring-green-mist: #f2f9ed;
+	--spring-green-light-mist: #e8f6dd;
+
+	/* ================= Linen Sandstone ================= */
+
+	--linen-primary: #ccc1a9;
+	--linen-dark: #d6cdba;
+	--linen-light: #e0dacb;
+	--linen-extra-light: #ebe6dd;
+	--linen-light-20: #e2dbcb;
+
+	/* ================= Utility Colors ================= */
+
+	--dark-green: #011210;
+	--dark-teal: #0b4f48;
+	--highlight-green: #10635a;
+	--highlight-mist-green: #92ad7d;
+
+	/* ================= Neutral Gray ================= */
+
+	--gray-100: #1f1f1f;
+	--gray-90: #262626;
+	--gray-80: #434343;
+	--gray-70: #595959;
+	--gray-60: #8c8c8c;
+	--gray-50: #bfbfbf;
+	--gray-40: #d9d9d9;
+	--gray-30: #f0f0f0;
+	--gray-20: #f5f5f5;
+	--gray-10: #fafafa;
+	--gray-0: #ccc;
+
+	/* ================= State Colors ================= */
+
+	--error-red: #d31f1f;
+	--status-available: #36d9a0;
+	--status-inuse: #feeda9;
+	--status-inactive: #afafaf;
+
+	/* ================= Theme Accent (used across footer, cookies, text colors) ================= */
+	--theme-accent: #03ffab; /* default and investor theme */
+
+	/* ================= Section Title Accent ================= */
+	--section-title-accent: #f5a623; /* default; overridden per theme */
+
+	/* ================= Coffee Theme ================= */
+
+	--coffee-brown: #201501;
+	--coffee-dark-chestnut: #6e4e45;
+	--coffee-dark-chestnut-bright: #6e4e451a;
+	--coffee-yellow-link: #ffdf8b;
+	--coffee-yellow-border: #ffdf8b4d;
+	--coffee-wine: #473853;
+
+	/* ================= Blue Theme ================= */
+
+	--blue-dark: #011221;
+	--blue-dark-footer: #061a31;
+	--blue-background-dark: #02081b;
+	--blue-link-dark: #022e71;
+	--electric-blue: #00ffe0;
+	--electric-blue-30: #00f0ff4d;
+	--electric-blue-light: #03e1ff;
+	--sky-blue: #e4f7ff;
+	--sky-blue-60: #effaff;
+
+	/* ================= Orange Theme ================= */
+	--orange-primary: #d78202;
+	--orange-30: #d681004d;
+	--orange-brown: #d8870c4d;
+	--orange-cta: #eae0d4;
+	--orange-brown-dark: #271d09;
+
+	/* ================= Cards Component ================= */
+	--card-border-color: #dadada;
+	--card-cta-color: #d78202;
+	--card-body-padding: var(--spacing-06); /* 16px → 32px desktop */
+	--card-grid-gap: var(--spacing-07); /* 24px → 40px desktop */
+	--card-transition: 0.4s ease;
+
+	/* nav height */
+	--nav-height: 48px;
+
+	/* ================= Grid system ================= */
+	--grid-gutter: 24px;
+}
+
+@media (width >= 992px) {
+	:root {
+		/* nav height desktop */
+		--nav-height: 90px;
+        --nav-total-height: 140px;
+		--fs-subhead: 1.25rem;
+		--fs-card-title: 1.25rem;
+		--fs-card-center-title: 1.5rem;
+		--fs-testimonial-title: 1.5rem;
+	}
+
+	.section-title {
+		padding-bottom: 32px !important;
+	}
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	overflow-x: clip;
+}
+
+html > body {
+	display: none;
+	max-width: 1920px;
+	margin: 0 auto;
+	overflow-x: clip;
+	background: var(--color-white);
+	font-family: var(--font-outfit);
+	font-size: var(--fs-base);
+	position: relative;
+}
+
+html > body.appear {
+	display: block;
+}
+
+header {
+	height: var(--nav-total-height);
+}
+
+@media screen and (width <= 992px) {
+	html > body.appear {
+		display: inline-block;
+		width: 100%;
+	}
+
+  header{
+    height: var(--nav-total-height-mobile);
+  }
+}
+
+header .header,
+footer .footer {
+	visibility: hidden;
+}
+
+header .header[data-block-status='loaded'],
+footer .footer[data-block-status='loaded'] {
+	visibility: visible;
+}
+
+.hideheaderfooter .header-wrapper,
+.hideheaderfooter .footer-wrapper,
+.hideheaderfooter #container-cookies-popup {
+	display: none;
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+	font-size: var(--fs-base);
+	font-family: var(--font-outfit);
+	margin-bottom: 1rem;
+}
+
+/* Restore indentation for lists so ::marker (bullets/numbers) has room
+   to render inside the content flow. The global * reset zeroes padding,
+   which causes outside-positioned markers to spill into gaps or overflow. */
+ol,
+ul {
+	padding-left: 1.5rem;
+}
+
+ul:not([class]),
+ol:not([class]) {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+code,
+pre {
+	font-size: var(--fs-10);
+}
+
+pre {
+	padding: 16px;
+	border-radius: 8px;
+	overflow-x: auto;
+	white-space: pre;
+}
+
+input,
+textarea,
+select,
+button {
+	font: inherit;
+}
+
+/* links */
+a:any-link {
+	color: inherit;
+	text-decoration: none;
+	overflow-wrap: break-word;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* ================= Text Colors ================= */
+
+.dark-teal {
+	color: var(--dark-teal) !important;
+}
+
+.dark-green-blue {
+	color: var(--highlight-green) !important;
+}
+
+.bright-sea-green,
+.neon-spring-green {
+	color: var(--theme-accent) !important;
+}
+
+/* ── Theme accent overrides ── */
+
+.content-ezcharge-theme {
+	--theme-accent: #00ffe0;
+	--section-title-accent: var(--blue-medium);
+}
+
+.content-solar-theme,
+.content-orange-theme {
+	--theme-accent: #d68100;
+	--section-title-accent: var(--orange-primary);
+}
+
+/* Investors / Default theme */
+.content-invester-theme,
+.content-default-theme {
+	--section-title-accent: var(--highlight-green);
+}
+
+/* EzHome theme */
+.content-ezhome-theme {
+	--section-title-accent: var(--highlight-green);
+}
+
+.solar-orange {
+	color: var(--orange-primary) !important;
+}
+
+.royal-blue {
+	color: var(--blue-medium) !important;
+}
+
+.spring-green {
+	color: var(--spring-green-primary) !important;
+}
+
+.electric-blue {
+	color: var(--electric-blue) !important;
+}
+
+.dark-chestnut {
+	color: var(--coffee-dark-chestnut) !important;
+}
+
+.yellow-link {
+	color: var(--coffee-yellow-link) !important;
+}
+
+.white-text {
+	color: var(--color-white) !important;
+}
+
+.dark-text {
+	color: var(--color-foreground) !important;
+}
+
+.black-text {
+	color: var(--color-dark-black) !important;
+}
+
+/* ================= Typography ================= */
+
+h1 {
+	font-size: var(--fs-large);
+	line-height: var(--lh-default);
+	font-family: var(--font-syne);
+	font-weight: var(--weight-semibold);
+}
+
+@media (width >= 991px) {
+	h1 {
+		font-size: var(--fs-xlarge) !important;
+	}
+}
+
+@media (width < 991px) {
+	.grid-columns .section.form-container-image .default-content-wrapper img {
+		min-height: 322px !important;
+	}
+}
+
+h2 {
+	font-size: var(--fs-large);
+	line-height: var(--lh-default);
+	font-family: var(--font-syne);
+	font-weight: var(--weight-semibold);
+}
+
+h3 {
+	font-size: var(--fs-h1);
+	line-height: var(--lh-default);
+	font-family: var(--font-syne);
+	font-weight: var(--weight-semibold);
+}
+
+h4 {
+	font-size: var(--fs-h3);
+	line-height: var(--lh-default);
+	font-family: var(--font-syne);
+	font-weight: var(--weight-semibold);
+}
+
+h5 {
+	font-size: var(--fs-h4);
+	line-height: var(--lh-default);
+	font-family: var(--font-syne);
+	font-weight: var(--weight-semibold);
+}
+
+.tp-font-display {
+	font-size: var(--fs-large) !important;
+	line-height: var(--lh-default-mobile) !important;
+	font-family: var(--font-syne) !important;
+	font-weight: var(--weight-bold) !important;
+}
+
+.tp-font-h1 {
+	font-size: var(--fs-large) !important;
+	line-height: var(--lh-default) !important;
+	font-family: var(--font-syne) !important;
+	font-weight: var(--weight-semibold) !important;
+}
+
+@media (width >= 991px) {
+	.tp-font-display {
+		font-size: clamp(2rem, -2.4286rem + 7.1429vw, 4rem) !important;
+		line-height: var(--lh-base) !important;
+	}
+
+	.tp-font-h1 {
+		font-size: var(--fs-xlarge) !important;
+	}
+}
+
+.tp-font-h2 {
+	font-size: var(--fs-large) !important;
+	line-height: var(--lh-default) !important;
+	font-family: var(--font-syne) !important;
+	font-weight: var(--weight-semibold) !important;
+}
+
+.tp-font-h3 {
+	font-size: var(--fs-h1) !important;
+	line-height: var(--lh-default) !important;
+	font-family: var(--font-syne) !important;
+	font-weight: var(--weight-semibold) !important;
+}
+
+.tp-font-h4 {
+	font-size: var(--fs-h3) !important;
+	line-height: var(--lh-default) !important;
+	font-family: var(--font-syne) !important;
+	font-weight: var(--weight-semibold) !important;
+}
+
+.tp-font-h5 {
+	font-size: var(--fs-h4) !important;
+	line-height: var(--lh-default) !important;
+	font-family: var(--font-syne) !important;
+	font-weight: var(--weight-semibold) !important;
+}
+
+.tp-font-p-small {
+	font-size: var(--fs-small) !important;
+	line-height: var(--lh-small) !important;
+	font-family: var(--font-outfit) !important;
+}
+
+.tp-font-p-xsmall {
+	font-size: 0.75rem !important;
+	line-height: var(--lh-small) !important;
+	font-family: var(--font-outfit) !important;
+}
+
+.tp-font-light {
+	font-weight: var(--weight-300) !important;
+}
+
+.tp-font-regular {
+	font-weight: var(--weight-400) !important;
+}
+
+.tp-font-medium {
+	font-weight: var(--weight-500) !important;
+}
+
+.tp-font-semibold {
+	font-weight: var(--weight-600) !important;
+}
+
+.tp-font-bold {
+	font-weight: var(--weight-700) !important;
+}
+
+.tp-font-extrabold {
+	font-weight: var(--weight-900) !important;
+}
+
+.tp-caption-text {
+	color: #212529;
+}
+
+.tp-note-terms {
+	font-size: 0.75rem !important;
+	line-height: var(--lh-small) !important;
+	font-family: var(--font-outfit) !important;
+	color: #212529 !important;
+}
+
+/* Remove bottom margin from paragraphs containing images */
+body p:has(picture) {
+	margin-bottom: 0;
+}
+
+/* Style only captions immediately following an image */
+.image-caption {
+	color: #212529;
+	text-align: center;
+}
+
+/* ================= Buttons ================= */
+
+.button.primary,
+.button.secondary {
+	display: flex;
+	font-family: var(--font-outfit);
+	font-weight: var(--weight-medium);
+	padding: 12px 60px 12px 35px;
+	font-size: var(--fs-small);
+	justify-content: center;
+	line-height: 15.4px;
+	min-height: 40px;
+	letter-spacing: 1px;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: linear-gradient(90deg, #f2f9ed 50%, transparent 0);
+	background-position: 100% 100%;
+	background-size: 200% 100%;
+	transition: all 0.5s ease-out;
+}
+
+.button.primary {
+	border: 1.5px solid var(--midnight-primary);
+	color: var(--midnight-primary);
+}
+
+.button.secondary {
+	border: 1.5px solid var(--ivory-primary);
+	color: var(--ivory-primary);
+}
+
+.content-ezcharge-theme .button.primary,
+.content-ezcharge-theme .button.secondary {
+	background: linear-gradient(90deg, #e4f7ff 50%, transparent 0);
+	background-position: 100% 100%;
+	background-size: 200% 100%;
+}
+
+@media screen and (width >= 992px) {
+	.button.primary,
+	.button.secondary {
+		display: inline-flex;
+		padding: 16px 64px 16px 32px;
+		font-size: var(--fs-h4);
+		min-height: 56px;
+	}
+}
+
+/* ================= Arrow ================= */
+
+.button.primary:hover,
+.button.secondary:hover {
+	background-position: 0 100%;
+	border-color: var(--color-foreground);
+	color: var(--green-primary);
+}
+
+.button.primary::before,
+.button.secondary::before {
+	content: '';
+	position: static;
+	height: 2px;
+	width: 16px;
+	margin-left: 8px;
+	transition: width 0.4s ease;
+	order: 1;
+	align-self: center;
+	flex-shrink: 0;
+}
+
+.button.primary::before {
+	background: var(--highlight-green);
+}
+
+.content-orange-theme .button.primary,
+.content-solar-theme .button.primary {
+	background: linear-gradient(
+		90deg,
+		var(--card-cta-color),
+		50%,
+		var(--midnight-primary) 0
+	);
+}
+
+.content-orange-theme .button.secondary,
+.content-solar-theme .button.secondary {
+	background: linear-gradient(
+		90deg,
+		var(--card-cta-color),
+		50%,
+		transparent 0
+	);
+}
+
+.content-orange-theme .button.primary,
+.content-orange-theme .button.secondary,
+.content-solar-theme .button.primary,
+.content-solar-theme .button.secondary {
+	background-position: 100% 100%;
+	background-size: 200% 100%;
+	color: var(--ivory-primary);
+}
+
+.content-ezcharge-theme .button.primary:hover,
+.content-ezcharge-theme .button.secondary:hover {
+	color: var(--blue-medium);
+}
+
+.content-ezcharge-theme .button.primary::before {
+	background: var(--blue-medium) !important;
+}
+
+.button.secondary::before {
+	background: var(--spring-green-primary);
+}
+
+.button.primary::after,
+.button.secondary::after {
+	content: '';
+	position: relative;
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid;
+	border-right: 2px solid;
+	left: -8px;
+	transform: rotate(45deg);
+	transition: right 0.4s ease;
+	box-sizing: content-box;
+	order: 1;
+	align-self: center;
+	flex-shrink: 0;
+	border-radius: 1px;
+}
+
+@media screen and (width >= 992px) {
+	.button.primary::before,
+	.button.secondary::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: calc(100% - 56px);
+		margin: 0;
+	}
+
+	.button.primary::after,
+	.button.secondary::after {
+		content: '';
+		position: absolute;
+		transform: translateY(-50%) rotate(45deg);
+		right: 40px;
+		top: 50%;
+		transition: right 0.4s ease;
+		box-sizing: content-box;
+		left: unset;
+		order: 1;
+	}
+}
+
+.button.primary::after {
+	border-color: var(--highlight-green);
+}
+
+.button.secondary::after {
+	border-color: var(--spring-green-primary);
+}
+
+.content-ezcharge-theme .button.primary::after {
+	border-color: var(--blue-medium) !important;
+}
+
+.button.primary:hover::before,
+.button.primary:active::before,
+.button.secondary:hover::before,
+.button.secondary:active::before {
+	width: 24px;
+	background-color: var(--green-primary);
+}
+
+.button.primary:hover::after,
+.button.primary:active::after,
+.button.secondary:hover::after,
+.button.secondary:active::after {
+	right: 32px;
+	border-color: var(--green-primary);
+}
+
+.content-orange-theme .button.secondary::after,
+.content-orange-theme .button.primary::after,
+.content-solar-theme .button.secondary::after,
+.content-solar-theme .button.primary::after {
+	border-color: var(--card-cta-color);
+}
+
+.content-orange-theme .button.secondary::before,
+.content-orange-theme .button.primary::before,
+.content-solar-theme .button.secondary::before,
+.content-solar-theme .button.primary::before {
+	background: var(--card-cta-color);
+}
+
+.content-orange-theme .button.primary:hover,
+.content-orange-theme .button.secondary:hover,
+.content-solar-theme .button.primary:hover,
+.content-solar-theme .button.secondary:hover {
+	background-position: 0 100%;
+	color: var(--ivory-primary) !important;
+}
+
+.content-orange-theme .button.primary:hover::before,
+.content-orange-theme .button.primary:active::before,
+.content-orange-theme .button.secondary:hover::before,
+.content-orange-theme .button.secondary:active::before,
+.content-solar-theme .button.primary:hover::before,
+.content-solar-theme .button.primary:active::before,
+.content-solar-theme .button.secondary:hover::before,
+.content-solar-theme .button.secondary:active::before {
+	background-color: var(--ivory-primary) !important;
+}
+
+.content-orange-theme .button.primary:hover::after,
+.content-orange-theme .button.primary:active::after,
+.content-orange-theme .button.secondary:hover::after,
+.content-orange-theme .button.secondary:active::after,
+.content-solar-theme .button.primary:hover::after,
+.content-solar-theme .button.primary:active::after,
+.content-solar-theme .button.secondary:hover::after,
+.content-solar-theme .button.secondary:active::after {
+	border-color: var(--ivory-primary) !important;
+}
+
+/* ================= Background Utilities ================= */
+
+.bg-light-beige {
+	background-color: var(--linen-extra-light) !important;
+}
+
+/* on a centred .container section the colour runs edge to edge */
+.section.container.bg-light-beige {
+  box-shadow: 0 0 0 100vmax var(--linen-extra-light);
+  clip-path: inset(0 -100vmax);
+}
+
+.bg-oceanic-green-secondary-lightest {
+	background-color: var(--green-secondary-lightest) !important;
+}
+
+.bg-spring-green {
+	background-color: var(--spring-green-primary) !important;
+}
+
+.bg-white-mist-light {
+	background-color: var(--ivory-light) !important;
+}
+
+.bg-oceanic-green-primary {
+	background-color: var(--green-primary) !important;
+}
+
+/* ================= default ================= */
+
+main img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+.d-block {
+	display: block;
+}
+
+.icon {
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+}
+
+.icon img {
+	height: 100%;
+	width: 100%;
+}
+
+/* ================= Containers ================= */
+.container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+.container-padding {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 16px;
+}
+
+@media (width >= 992px) {
+	.container {
+		max-width: 1440px;
+		padding: 0 80px;
+	}
+
+	.container-small {
+		max-width: 845px;
+	}
+
+	.container-padding {
+		max-width: 1440px;
+		padding: 40px 80px;
+	}
+}
+
+/* nav-item block wrapper — inlined to avoid a critical-path CSS request */
+.nav-item-wrapper {
+	display: block;
+}
+
+/* Error section */
+.error-section {
+	padding: 40px 1pc;
+}
+
+.error-section h2 {
+	font-size: var(--fs-large);
+	line-height: 2.4pc;
+	margin: 0 0 1pc;
+}
+
+.error-section p {
+	font-size: var(--fs-h5);
+	line-height: 1.3pc;
+	margin: 0 0 24px;
+}
+
+.error-section img {
+	height: 63.333vw;
+}
+
+@media (width >= 992px) {
+	.error-section {
+		padding: 0;
+	}
+
+	.error-section h2 {
+		font-family: var(--font-syne);
+		font-size: var(--fs-64);
+		font-weight: 600;
+		line-height: 4pc;
+		margin: 50px 0 2pc;
+		text-align: left;
+		-ms-flex-pack: center;
+		display: -webkit-box;
+		display: flex;
+		justify-content: center;
+	}
+
+	.error-section p {
+		font-family: var(--font-outfit);
+		font-size: var(--fs-h1);
+		font-weight: 400;
+		line-height: 24px;
+		margin: 0 0 105px;
+		text-align: left;
+		-ms-flex-pack: center;
+		display: -webkit-box;
+		display: flex;
+		justify-content: center;
+	}
+
+	.error-section img {
+		margin: auto;
+		width: auto;
+		height: 31.319vw;
+		-ms-flex-pack: center;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.blue-medium {
+	color: var(--blue-medium);
+}
+
+.section.terms-section {
+	background-color: #ebe6dd;
+	padding-top: 5pc;
+	padding-bottom: 5pc;
+	box-sizing: border-box;
+}
+
+.section.terms-section::before {
+	background-color: #ebe6dd;
+	content: '';
+	position: absolute;
+	height: 100%;
+	top: 0;
+	width: 1920px;
+	transform: translateX(-50%);
+	left: 50%;
+	z-index: -1;
+}
+
+.section.terms-section .richtext-content {
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.section.terms-section p {
+	color: #202020;
+	font-family: var(--font-outfit);
+	font-size: 1.125rem;
+	font-weight: 300;
+	line-height: 27px;
+	margin-bottom: 1.5rem;
+	padding: 0;
+	text-align: justify !important;
+}
+
+.section.terms-section .richtext-content p {
+	margin-bottom: 0;
+}
+
+/* ── Authored section backgrounds (UE backgroundColor / backgroundImage / mobileBackgroundImage) ─
+   scripts.js reads UE field values and sets CSS custom properties + classes:
+     .has-bg-color        → --section-bg-color    (e.g. #062824)
+     .has-bg-image        → --section-bg-image    (e.g. url('/img/bg.jpg'))
+     .has-mobile-bg-image → --section-mobile-bg-image (shown below 600px only)
+
+   A ::before pseudo-element breaks out of the section's max-width container
+   so the background fills the full viewport width.
+
+   When both color and image are set, the image renders on top;
+   the color acts as a fallback while the image loads.
+──────────────────────────────────────────────────────────────────────────── */
+.section:is(.has-bg-color, .has-bg-image, .has-mobile-bg-image) {
+  position: relative;
+  isolation: isolate;
+}
+
+.section:is(.has-bg-color, .has-bg-image, .has-mobile-bg-image)::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-color: var(--section-bg-color, transparent);
+  background-image: var(--section-bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* All direct children must sit above the ::before background layer */
+.section:is(.has-bg-color, .has-bg-image, .has-mobile-bg-image) > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: swap in the mobile-specific background image below 600px */
+@media (width < 992px) {
+  .section.has-mobile-bg-image::before {
+    background-image: var(--section-mobile-bg-image);
+  }
+}
+
+/* Dark background — full-bleed, with light text */
+.section.dark-bg {
+  position: relative;
+  isolation: isolate;
+  color: var(--ivory-primary);
+}
+
+.section.dark-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-color: var(--dark-green);
+  z-index: -1;
+}
+
+.section.dark-bg :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--ivory-primary);
+}
+
+/* ── Section spacing utilities ────────────────────────────── */
+
+/* Padding 80px top+bottom on desktop, 40px on mobile */
+.section.padding-80-40 {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.section.padding-top-80-40 {
+	padding-top: 40px;
+}
+
+.section.padding-bottom-80-40 {
+	padding-bottom: 40px;
+}
+
+.m-b-16 {
+	margin-bottom: 16px;
+}
+
+@media (width >= 992px) {
+	.margin-top-d-40 {
+		margin-top: 40px;
+	}
+
+	.margin-bottom-d-40 {
+		margin-bottom: 40px;
+	}
+
+	.section.padding-80-40 {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.section.padding-top-80-40 {
+		padding-top: 80px;
+	}
+
+	.section.padding-bottom-80-40 {
+		padding-bottom: 80px;
+	}
+}
+
+/* Bottom Margin 0px — always wins, even when combined with padding-80-40 */
+.section.no-top-margin {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+.section.no-bottom-margin {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* Mobile-only spacing overrides — apply below 991px only */
+@media (width < 991px) {
+	.section.mobile-margin-top-0 {
+		margin-top: 0 !important;
+	}
+
+	.section.mobile-margin-bottom-0 {
+		margin-bottom: 0 !important;
+	}
+
+	.section.mobile-padding-top-0 {
+		padding-top: 0 !important;
+	}
+
+	.section.mobile-padding-bottom-0 {
+		padding-bottom: 0 !important;
+	}
+}
+
+/* Mobile-only spacing overrides — apply below 991px only */
+@media (width < 991px) {
+	.section.mobile-margin-top-0 {
+		margin-top: 0 !important;
+	}
+
+	.section.mobile-margin-bottom-0 {
+		margin-bottom: 0 !important;
+	}
+
+	.section.mobile-padding-top-0 {
+		padding-top: 0 !important;
+	}
+
+	.section.mobile-padding-bottom-0 {
+		padding-bottom: 0 !important;
+	}
+}
+
+@media (width <= 768px) {
+	.section.terms-section {
+		padding: 24px 16px;
+	}
+
+	.section.terms-section .richtext-content {
+		padding: 0;
+	}
+}
+
+/* ================= Grid Columns layout ================= */
+
+/*
+ * .grid-columns is a section-level layout wrapper.
+ * The actual CSS grid and span-col-* rules live in blocks/grid-columns/grid-columns.css.
+ * These rules handle section integration: margin collapse, spacing utilities,
+ * and block resets that must be available before the block CSS loads.
+ */
+
+/* Sections nested inside a grid-columns column have no independent bottom margin —
+   the grid gap handles spacing between rows. */
+.grid-columns > .section {
+	margin-bottom: 0;
+}
+
+/* Blocks inside grid-columns columns reset their own margin so the
+   grid gap is the sole source of rhythm. */
+.grid-columns .block {
+	margin: 0;
+}
+
+/* Spacing utility overrides — bottom-margin on .grid-columns itself */
+.grid-columns.no-bottom-margin {
+	margin-bottom: 0 !important;
+}
+
+/* ================= Section Title ================= */
+
+/*
+ * .section-title is a global heading style for section headings.
+ * A <span> inside the heading receives the theme accent colour,
+ * matching the same pattern used in .dealer-list-title and similar blocks.
+ *
+ * Default accent is set via --section-title-accent in :root (below the theme
+ * overrides) and overridden per-theme alongside the other theme variables.
+ */
+.section-title span {
+	color: var(--section-title-accent);
+	font-weight: inherit;
+}
+
+/* ================= Tab Panel sections ================= */
+
+/* Inactive tab-panel sections are hidden via [hidden] attribute by tab-list.js */
+
+.section[role='tabpanel'][hidden] {
+	display: none;
+}
+
+.section[role='tabpanel'][aria-hidden='true'] {
+	display: none;
+}
+
+.section-title {
+	padding-bottom: 24px;
+}
+
+.spacing-bottom-d32-m24 {
+	padding-bottom: 24px;
+
+	@media screen and (width >= 992px) {
+		padding-bottom: 32px;
+	}
+}
+
+/* global modal css */
+.global-modal {
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	overflow: hidden;
+}
+
+.global-modal::backdrop {
+	background: rgb(0 0 0 / 60%);
+}
+
+.global-modal__panel {
+	position: absolute;
+	box-sizing: border-box;
+	background: #fff;
+	overflow-y: auto;
+}
+
+/* Right */
+.global-modal--right .global-modal__panel {
+	top: 0;
+	right: 0;
+	width: min(564px, 100%);
+	height: 100%;
+}
+
+/* Left */
+.global-modal--left .global-modal__panel {
+	top: 0;
+	left: 0;
+	width: min(564px, 100%);
+	height: 100%;
+}
+
+/* Center */
+.global-modal--center .global-modal__panel {
+	top: 50%;
+	left: 50%;
+	width: min(640px, calc(100% - 40px));
+	max-height: calc(100% - 80px);
+	transform: translate(-50%, -50%);
+}
+
+/* Close */
+.global-modal__close {
+	position: absolute;
+	top: 29px;
+	right: 52px;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.global-modal__close::before,
+.global-modal__close::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 24px;
+	height: 1.5px;
+	background: #222;
+	content: '';
+
+  @media (width < 900px) {
+    width: 12px;
+  }
+}
+
+.global-modal__close::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.global-modal__close::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.global-modal__content {
+	padding: 35px 40px;
+}
+
+@media (width <= 767px) {
+	.global-modal--left .global-modal__panel,
+	.global-modal--right .global-modal__panel {
+		width: 100%;
+	}
+
+	.global-modal__content {
+		padding: 32px 24px;
+	}
+}
+
+/* Glossary pages (index, letter, term): breadcrumb text where the source puts it. The block's
+   nav repeats the .breadcrumb class, so its 18px padding applies twice; below 992px that sets the
+   text 13px lower than the source. The first link drops its 4px inset (text starts at the edge). */
+main:has(> .section.glossary-hero, > .section.glossary-listing, > .section.glossary-term) .breadcrumb-item:first-child .breadcrumb-link {
+  padding-left: 0;
+}
+
+@media (width <= 992px) {
+  main:has(> .section.glossary-hero, > .section.glossary-listing, > .section.glossary-term) .breadcrumb-section nav.breadcrumb {
+    padding-top: 5px; /* literal: with the outer 18px, the source text offset (mobile/tablet) */
+  }
+}
+
+/* Glossary letter pages: title band sized to the H1 only (pages with a glossary-listing section) */
+main:has(> .section.glossary-listing) .header-banner .banner {
+  min-height: 136px; /* literal: source letter title band height (mobile) */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+main:has(> .section.glossary-listing) .header-banner-content {
+  min-height: 0;
+  margin-top: 0;
+  padding-top: var(--spacing-12);
+  padding-bottom: 0;
+}
+
+main:has(> .section.glossary-listing) .header-banner-content h1 {
+  max-width: 240px; /* literal: the source title wraps to two lines below 992px */
+  font-weight: var(--weight-semibold);
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+/* ================= Glossary listing section (style: glossary-listing) ================= */
+main .section.glossary-listing {
+  padding: var(--spacing-07) var(--section-padding-x);
+}
+
+main .section.glossary-listing > div {
+  max-width: calc(var(--container-max-width) - 2 * var(--section-padding-x));
+  margin: 0 auto;
+}
+
+@media (width >= 992px) {
+  main:has(> .section.glossary-listing) .header-banner .banner,
+  main:has(> .section.glossary-listing) .header-banner-content {
+    min-height: 186px; /* literal: source letter title band height (desktop) */
+  }
+
+  main:has(> .section.glossary-listing) .header-banner-content {
+    padding-top: 6pc;
+  }
+
+  main:has(> .section.glossary-listing) .header-banner-content h1 {
+    max-width: none;
+  }
+}
+
+@media (width >= 1200px) {
+  main .section.glossary-listing {
+    padding-block: 60px; /* literal: source listing padding (desktop) */
+  }
+}
+
+/* Glossary term pages: solid-colour title band sized to the H1 (pages with a glossary-term section) */
+main:has(> .section.glossary-term) .header-banner .banner {
+  min-height: 100px; /* literal: source term title band height (mobile) */
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: var(--green-primary);
+}
+
+main:has(> .section.glossary-term) .header-banner-content {
+  min-height: 0;
+  margin-top: 0;
+  padding-top: 52px; /* literal: source band insets around the title (mobile) */
+  padding-bottom: 16px;
+}
+
+main:has(> .section.glossary-term) .header-banner-content h1 {
+  margin-bottom: 0;
+  color: var(--color-white);
+  font-weight: var(--weight-semibold);
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+/* ================= Glossary term section (style: glossary-term) =================
+   Definition (default content) followed by "Related Terms" (glossary-list, list layout) */
+main .section.glossary-term {
+  padding: 0 16px 32px; /* literal: source content inset and spacing (mobile/tablet) */
+}
+
+main .section.glossary-term > div {
+  max-width: calc(var(--container-max-width) - 160px); /* literal: 80px insets (desktop) */
+  margin: 0 auto;
+}
+
+main .section.glossary-term .default-content-wrapper :is(h2, h3, h4) {
+  margin: 12px 0 0; /* literal: source heading spacing (mobile) */
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-h4);
+  font-weight: var(--weight-semibold);
+  line-height: 1.3;
+}
+
+/* below 992px headings that follow text get more room */
+main .section.glossary-term .default-content-wrapper :is(p, ul, ol) + h2 {
+  margin-top: 24px; /* literal: source heading spacing after text (mobile) */
+}
+
+/* "Related Terms": the heading right above the glossary-list (source text style "h1") */
+main .section.glossary-term .default-content-wrapper:has(+ .glossary-list-wrapper) > h2:last-child {
+  margin: 56px 0 0; /* literal: source spacing above the related terms (mobile) */
+  font-family: var(--font-syne);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-medium);
+}
+
+main .section.glossary-term .default-content-wrapper p,
+main .section.glossary-term .default-content-wrapper li {
+  margin: var(--spacing-03) 0 0;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+/* lists: indented items with the bullet inside the indent, as on the source */
+main .section.glossary-term .default-content-wrapper :is(ul, ol) {
+  gap: 0; /* items carry their own 2px spacing (global lists use an 8px gap) */
+  margin: var(--spacing-03) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+main .section.glossary-term .default-content-wrapper li {
+  margin: 0;
+  padding-left: 20px; /* literal: source item indent (mobile) */
+  list-style: disc inside; /* the source shows the bullet inside the indent */
+  line-height: 17px; /* literal: source item line height (mobile) */
+}
+
+main .section.glossary-term .default-content-wrapper li:not(:last-child) {
+  margin-bottom: 2px; /* literal: source item spacing */
+}
+
+main .section.glossary-term .default-content-wrapper a:any-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media (width >= 992px) {
+  main:has(> .section.glossary-term) .header-banner .banner,
+  main:has(> .section.glossary-term) .header-banner-content {
+    min-height: 144px; /* literal: source term title band height (desktop) */
+  }
+
+  /* header-banner keeps a 1rem (!important) gap below the H1 from 992px: it closes the band */
+  main:has(> .section.glossary-term) .header-banner-content {
+    padding-top: 80px; /* literal: source band inset above the title (desktop) */
+    padding-bottom: 0;
+  }
+
+  main .section.glossary-term {
+    padding: 0 80px 60px; /* literal: source content inset and spacing (desktop) */
+  }
+
+  main .section.glossary-term .default-content-wrapper :is(h2, h3, h4),
+  main .section.glossary-term .default-content-wrapper :is(p, ul, ol) + h2 {
+    margin-top: 20px; /* literal: source heading spacing (desktop) */
+  }
+
+  main .section.glossary-term .default-content-wrapper:has(+ .glossary-list-wrapper) > h2:last-child {
+    margin: 48px 0 12px; /* literal: source spacing around the related terms heading (desktop) */
+    font-family: var(--font-outfit);
+    font-size: var(--fs-large);
+  }
+
+  main .section.glossary-term .default-content-wrapper p,
+  main .section.glossary-term .default-content-wrapper :is(ul, ol) {
+    margin-top: 12px; /* literal: source paragraph spacing (desktop) */
+  }
+
+  main .section.glossary-term .default-content-wrapper li {
+    padding-left: 30px; /* literal: source item indent (desktop) */
+    line-height: 20px; /* literal: source item line height (desktop) */
+  }
+}
+
+/* Glossary title band: pages with a glossary-hero section use the source type and band height */
+main:has(> .section.glossary-hero) .header-banner-content {
+  padding-top: var(--spacing-12);
+}
+
+main:has(> .section.glossary-hero) .header-banner-content h1 {
+  font-weight: var(--weight-semibold);
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+main:has(> .section.glossary-hero) .header-banner-content .banner-description,
+main:has(> .section.glossary-hero) .header-banner-content .banner-description p {
+  font-size: var(--fs-base);
+  font-weight: var(--weight-light);
+  line-height: 1.3;
+}
+
+/* the source anchors the band artwork to the top left (background-position 0 0) */
+main:has(> .section.glossary-hero) .header-banner .banner img {
+  object-position: left top;
+}
+
+/* dark base behind the band artwork: at fractional zoom levels the last partial pixel column
+   of the image would otherwise show the white page background as a thin line */
+main:has(> .section.glossary-hero) .header-banner .banner,
+main:has(> .section.glossary-listing) .header-banner .banner {
+  background-color: var(--green-primary);
+}
+
+/* below 992px: band sized to its text (64px inset above, 16px below); the artwork sits on the
+   right, so the text keeps to a 212px column as on the source */
+@media (width < 992px) {
+  main:has(> .section.glossary-hero) .header-banner .banner {
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  main:has(> .section.glossary-hero) .header-banner-content {
+    min-height: 0;
+    margin-top: 0;
+    padding-top: 64px; /* literal: source band inset above the title (mobile/tablet) */
+    padding-bottom: 16px; /* literal: source band inset below the text (mobile/tablet) */
+  }
+
+  main:has(> .section.glossary-hero) .header-banner-content > * {
+    max-width: 212px; /* literal: source text column width (mobile/tablet) */
+  }
+
+  main:has(> .section.glossary-hero) .header-banner-content h1 {
+    margin-bottom: var(--spacing-03);
+  }
+
+  main:has(> .section.glossary-hero) .header-banner-content .banner-description,
+  main:has(> .section.glossary-hero) .header-banner-content .banner-description p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (width >= 992px) {
+  main:has(> .section.glossary-hero) .header-banner-content {
+    min-height: 294px; /* literal: source title band height */
+    padding-top: 90px; /* literal: source band inset above the title (desktop) */
+  }
+
+  main:has(> .section.glossary-hero) .header-banner-content h1 {
+    line-height: 1.5;
+  }
+
+  main:has(> .section.glossary-hero) .header-banner-content .banner-description,
+  main:has(> .section.glossary-hero) .header-banner-content .banner-description p {
+    font-size: var(--fs-h3);
+  }
+}
+
+/* ================= Glossary hero section (style: glossary-hero) =================
+   Dark band behind the glossary A–Z index. The section's first authored image is shown
+   as the band background. */
+
+main .section.glossary-hero {
+  position: relative;
+  isolation: isolate;
+  padding: 0 var(--section-padding-x) var(--spacing-06);
+  background-color: var(--green-primary);
+}
+
+main .section.glossary-hero > div {
+  max-width: calc(var(--container-max-width) - 2 * var(--section-padding-x));
+  margin: 0 auto;
+}
+
+main .section.glossary-hero > .default-content-wrapper:first-child > p:first-child:has(> picture) {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: 0;
+}
+
+main .section.glossary-hero > .default-content-wrapper:first-child > p:first-child:has(> picture) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top; /* source background-position 0 0 */
+}
+
+@media (width >= 1200px) {
+  main .section.glossary-hero {
+    padding-bottom: var(--spacing-09);
+  }
+}
+
+/* Text authored below a form (e.g. a fraud notice) keeps clear of the form buttons */
+.section.form-container > .form-wrapper + .default-content-wrapper {
+  margin-top: 24px;
+}
+
+/* Section style "Large body text" (body-large): light body copy, 16px on
+   mobile and 20px from 992px - default content, columns and richtext */
+/* stylelint-disable-next-line no-descending-specificity */
+.section.body-large :is(.default-content-wrapper, .columns, .richtext) p {
+  font-size: var(--fs-base);
+  font-weight: var(--weight-light);
+  line-height: 1.3;
+}
+
+@media (width >= 992px) {
+  /* stylelint-disable-next-line no-descending-specificity */
+  .section.body-large :is(.default-content-wrapper, .columns, .richtext) p {
+    font-size: var(--fs-h3);
+  }
+}
+
+/* Section style "Intro text" (body-intro): light justified intro copy as on
+   tatapower.com/solaroof - 16px on mobile, 18px / 27px from 992px - with
+   24px between the heading and the text */
+/* stylelint-disable-next-line no-descending-specificity */
+.section.body-intro .default-content-wrapper p {
+  font-weight: var(--weight-light);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.section.body-intro .default-content-wrapper :is(h1, h2) {
+  margin-bottom: 24px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.body-intro .default-content-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.body-intro .default-content-wrapper p a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media (width >= 992px) {
+  /* stylelint-disable-next-line no-descending-specificity */
+  .section.body-intro .default-content-wrapper p {
+    font-size: var(--fs-h4);
+  }
+}
+
+/* Solaroof design / body text styles: headings and copy in #202020, as on
+   tatapower.com/solaroof (sections with a dark background, such as the help
+   banner, keep their own text colours) */
+/* stylelint-disable-next-line no-descending-specificity */
+.section:is(.solaroof-design, .body-intro, .body-large):not(.has-bg-color, .has-bg-image, .has-mobile-bg-image, .energy-consumption-calculator) :is(.default-content-wrapper, .richtext-wrapper, .columns-wrapper) :is(h1, h2, h3, p) {
+  color: var(--midnight-primary);
+}
+
+/* Solaroof design / body text styles below 992px: 32px / 1.2 headings in
+   default content and rich text, as on the source; the source's FAQ heading
+   keeps 1.2 on desktop too */
+@media (width < 992px) {
+  /* stylelint-disable-next-line no-descending-specificity */
+  .section:is(.solaroof-design, .body-intro, .body-large) :is(.default-content-wrapper, .richtext-wrapper) :is(h1, h2) {
+    font-size: var(--fs-large) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* ZLD-style two-column text: 14px / 17px light (the help banner has its own sizes) */
+  /* stylelint-disable-next-line no-descending-specificity */
+  .section.solaroof-design:where(:not(.energy-consumption-calculator)) .columns p {
+    font-size: var(--fs-small) !important;
+    line-height: 17px;
+  }
+}
+
+@media (width >= 992px) {
+  .section.solaroof-design .container-small h2.tp-font-h1 {
+    line-height: 1.2 !important;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .section.solaroof-design:where(:not(.energy-consumption-calculator)) .columns p {
+    line-height: 20px;
+  }
+}
+
+/* breadcrumb on Solaroof design pages: light current page, 18px line height */
+body:has(.section.solaroof-design) .breadcrumb :is(li, a, span) {
+  line-height: 18px;
+}
+
+body:has(.section.solaroof-design) .breadcrumb li:last-child,
+body:has(.section.solaroof-design) .breadcrumb li:last-child * {
+  font-weight: var(--weight-light);
+}
+
+/* ── Solaroof design spacing, as on tatapower.com/solaroof ───────────────── */
+
+/* 15px between a rich-text heading and the intro text below it (all sizes) */
+/* stylelint-disable-next-line no-descending-specificity */
+.section.solaroof-design .richtext-wrapper + .default-content-wrapper > p:first-child {
+  margin-top: 15px;
+}
+
+/* ZLD-style rich-text heading over a columns block: 16px to the image */
+.section.solaroof-design .richtext-wrapper + .columns-wrapper {
+  margin-top: 16px;
+}
+
+/* "In the spotlight": 40px from the heading section to the video row, and
+   the heading section 32px (15px from 992px) below the previous section */
+.section.solaroof-design + .grid-columns:has(> .section.video-container) {
+  margin-top: 40px;
+}
+
+.section.solaroof-design.padding-top-80-40:has(+ .grid-columns > .section.video-container) {
+  padding-top: 32px;
+}
+
+@media (width >= 992px) {
+  .section.solaroof-design.padding-top-80-40:has(+ .grid-columns > .section.video-container) {
+    padding-top: 15px;
+  }
+}
+
+/* the spotlight text column (Large body text next to a video): 15px under
+   the title, 15px between the disclaimer lines (55px above them from 992px) */
+.grid-columns > .section.body-large .default-content-wrapper :is(h2, h3) {
+  margin-bottom: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.grid-columns > .section.body-large .default-content-wrapper :is(h2, h3) + p {
+  margin-top: 15px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.grid-columns > .section.body-large .default-content-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+.grid-columns > .section.body-large .default-content-wrapper + .richtext-wrapper {
+  margin-top: 15px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.grid-columns > .section.body-large .richtext p {
+  margin: 0 0 15px;
+}
+
+
+/* the closing disclaimer of a Solaroof page (default content after the
+   related blogs): white text on the footer's dark band, right on the footer */
+main > .section.solaroof-design:last-child:has(.related-blogs-wrapper) {
+  padding-bottom: 0;
+}
+
+main > .section.solaroof-design:last-child:has(.related-blogs-wrapper) > .default-content-wrapper:last-child {
+  background-color: var(--blue-background-dark);
+  box-shadow: 0 0 0 100vmax var(--blue-background-dark);
+  clip-path: inset(0 -100vmax);
+}
+
+main > .section.solaroof-design:last-child:has(.related-blogs-wrapper) > .default-content-wrapper:last-child p {
+  margin: 0;
+  color: var(--color-white);
+  font-weight: var(--weight-regular);
+}
+
+@media (width < 992px) {
+  /* intro band on mobile: 40px above and below, 16px under the heading,
+     left-aligned text */
+  .section.body-intro.container-padding {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section.body-intro .default-content-wrapper :is(h1, h2) {
+    margin-bottom: 16px;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .section.body-intro .default-content-wrapper p {
+    text-align: left;
+  }
+}
+
+@media (width >= 992px) {
+  /* spotlight row: 7/12 video and 5/12 text with no gutter, the text 40px in */
+  .grid-columns:has(> .section.video-container):has(> .section.body-large) {
+    column-gap: 0;
+  }
+
+  /* grid-columns strips inner padding with !important (as the quick links band, override it) */
+  .grid-columns:has(> .section.video-container) > .section.body-large {
+    padding-left: 40px !important;
+  }
+
+  .grid-columns > .section.body-large .default-content-wrapper + .richtext-wrapper {
+    margin-top: 55px;
+  }
+}

@@ -1,0 +1,1411 @@
+/* add global styles that can be loaded post LCP here */
+
+/* ---- bright-sea-green utility ---- */
+.bright-sea-green {
+  color: #03ffab;
+}
+
+/* ---- home-page-bottom-section section with background image + richtext ---- */
+.section.home-page-bottom-section.richtext-container {
+  position: relative;
+  background-color: #011210;
+  color: #f8f5ec;
+  padding: 80px;
+}
+
+.section.home-page-bottom-section.richtext-container::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 1920px;
+  transform: translateX(-50%);
+  left: 50%;
+  background: #021211;
+  z-index: -1;
+}
+
+@media (width < 992px) {
+  .section.home-page-bottom-section.richtext-container {
+    padding: 40px 1pc;
+  }
+}
+
+/* Background image wrapper */
+.section.home-page-bottom-section.richtext-container .default-content-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+
+.section.home-page-bottom-section.richtext-container .default-content-wrapper>p {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.section.home-page-bottom-section.richtext-container .default-content-wrapper picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.section.home-page-bottom-section.richtext-container .default-content-wrapper picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.section.home-page-bottom-section.richtext-container .richtext-content {
+  color: #f8f5ec;
+}
+
+/* .section.home-page-bottom-section.richtext-container .richtext-content h2 {
+    font-family: var(--font-outfit);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #f8f5ec;
+    margin-bottom: 24px;
+} */
+
+.section.home-page-bottom-section.richtext-container .richtext-content p {
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #f8f5ec;
+  margin: 0 0 32px;
+  text-align: justify;
+}
+
+.section.home-page-bottom-section.richtext-container .richtext-content p:last-child {
+  margin: 0;
+}
+
+@media (width < 992px) {
+  .section.home-page-bottom-section.richtext-container .richtext-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 24px;
+  }
+}
+
+/* Body richtext (second richtext-wrapper) */
+
+.section.home-page-bottom-section.richtext-container .richtext-wrapper {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.section.home-page-bottom-section.richtext-container .richtext-wrapper h3 {
+  margin-bottom: 24px;
+  font-family: var(--font-outfit);
+  font-weight: 400;
+}
+
+@media (width < 992px) {
+  .section.home-page-bottom-section.richtext-container .richtext-wrapper:last-of-type h3 {
+    font-size: 1.125rem;
+  }
+}
+
+.section.home-page-bottom-section.richtext-container .richtext-wrapper:first-of-type {
+  position: relative;
+  z-index: 1;
+}
+
+.section.home-page-bottom-section.richtext-container .richtext-wrapper:first-of-type h2 {
+  margin-bottom: 40px;
+}
+
+@media (width < 992px) {
+  .section.home-page-bottom-section.richtext-container .richtext-wrapper:first-of-type h2 {
+    line-height: 38px !important;
+    font-weight: 600 !important;
+  }
+}
+
+/* ---- home-page-bottom-section section with background image + richtext ---- END */
+
+/* ── Fragment popup overlay ──
+   Neutral backdrop only — all popup styling lives in the authored fragment
+   page via its own <style> block or CSS classes. */
+#page-popup-overlay {
+  display: none;
+}
+
+@media (width > 992px) {
+  .solaroof-page main {
+    transform: translateY(-90px);
+  }
+
+  .solaroof-page footer {
+    margin-top: -90px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Channel Partner Success Section  (.channel-partner-success)
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Section wrapper — full-width card with border */
+
+/* .channel-partner-success .columns-wrapper {
+  border: 2px dashed #b0d4e8;
+  overflow: hidden;
+} */
+
+/* Two-column layout — equal halves on desktop */
+.channel-partner-success .columns>div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 420px;
+}
+
+@media (width >=992px) {
+  .channel-partner-success .columns>div {
+    flex-direction: row;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .channel-partner-success .columns>div>div {
+    flex: 0 0 49%;
+  }
+
+  .channel-partner-success .columns>div>div:not(.columns-img-col) {
+    gap: 16px !important;
+  }
+
+  .channel-partner-success .button.primary {
+    font-size: 18px !important;
+  }
+}
+
+/* Left column — image fills full height */
+.channel-partner-success .columns-img-col {
+  flex-shrink: 0;
+  overflow: hidden;
+  order: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.channel-partner-success .columns-img-col picture {
+  display: block;
+  height: 100%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.channel-partner-success .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right column — SVG background */
+.channel-partner-success .columns>div>div:not(.columns-img-col) {
+  background-color: #eaf6fb;
+  background-image: url('/icons/confirmation-blue-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 16px;
+  gap: 9px;
+  order: 1;
+  position: relative;
+}
+
+/* Success icon — badge style */
+.channel-partner-success .icon-success {
+  display: flex;
+  width: 80px;
+  height: 86px;
+  border-radius: 50%;
+
+  /* background: #00c48c;
+  align-items: center;
+  justify-content: center; */
+  margin: 0 auto 16px;
+  flex-shrink: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.channel-partner-success .icon-success img {
+  width: 100%;
+  height: 100%;
+
+  /* filter: brightness(0) invert(1); */
+}
+
+/* ── Loading state — SVG ring spinner, button hidden ───────── */
+.channel-partner-success.is-loading .icon-success {
+  background: transparent;
+  width: 160px;
+  height: 160px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.channel-partner-success.is-loading .icon-success img {
+  display: none;
+}
+
+/* SVG spinner injected via CSS — large green ring matching screenshot */
+.channel-partner-success.is-loading .icon-success::after {
+  content: '';
+  display: block;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  border: 8.48px solid #c8f0e0;
+  border-top-color: #00c48c;
+  border-right-color: #00c48c;
+  animation: cp-success-spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  box-sizing: border-box;
+}
+
+/* CTA button */
+.channel-partner-success .button-wrapper {
+  margin: 8px 0 0;
+}
+
+.channel-partner-success.is-loading .button-wrapper {
+  display: none;
+}
+
+@keyframes cp-success-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cp-success-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Heading */
+/* stylelint-disable-next-line no-descending-specificity */
+.channel-partner-success h2 {
+  font-size: var(--fs-large);
+  font-weight: var(--weight-semibold);
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+  line-height: 100%;
+  font-family: var(--font-syne);
+}
+
+@media (width >=992px) {
+  .channel-partner-success h2 {
+    font-size: 40px;
+  }
+
+  .channel-partner-success .icon-success {
+    width: 176px;
+    height: 170px;
+    margin: 0 auto 8px;
+  }
+
+  .channel-partner-success .button-wrapper {
+    margin: 16px 0 0;
+  }
+
+  .channel-partner-success p:not(.button-wrapper) {
+    font-size: var(--fs-h4) !important;
+  }
+
+  .channel-partner-success.is-loading .icon-success::after {
+    width: 147.54px;
+    height: 147.54px;
+    border: 11.8px solid #c8f0e0;
+    border-top-color: #00c48c;
+    border-right-color: #00c48c;
+    animation: cp-success-spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    box-sizing: border-box;
+  }
+}
+
+/* Body text */
+/* stylelint-disable-next-line no-descending-specificity */
+.channel-partner-success p:not(.button-wrapper) {
+  font-size: var(--fs-small);
+  color: var(--dark-green);
+  margin: 0;
+  font-weight: 400;
+  line-height: 21.5px;
+  max-width: 510px;
+}
+
+.channel-partner-success .button.primary {
+  background: linear-gradient(90deg, var(--orange-primary) 50%, transparent 0);
+  background-color: var(--blue-background-dark);
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+  color: var(--ivory-primary);
+  border: 1px solid var(--blue-background-dark);
+
+  /* padding: 14px 40px; */
+  font-size: var(--fs-small);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-position 0.4s ease;
+  line-height: 120%;
+}
+
+.channel-partner-success .button.primary::after {
+  border-color: var(--orange-primary);
+}
+
+.channel-partner-success .button.primary::before {
+  background: var(--orange-primary);
+}
+
+.channel-partner-success .button.primary:hover::before {
+  background: var(--color-white);
+}
+
+.channel-partner-success .button.primary:hover::after {
+  border-color: var(--color-white);
+}
+
+.channel-partner-success .button.primary:hover {
+  background-position: 0 100%;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.form-success-fragment:has(.channel-partner-success) {
+  padding: 0;
+}
+
+/* Mobile adjustments */
+@media (width < 992px) {
+  .channel-partner-success .columns>div {
+    flex-direction: column-reverse;
+  }
+
+  .channel-partner-success .columns>div>div:not(.columns-img-col) {
+    padding: 32px 16px;
+  }
+
+  .channel-partner-success .columns-img-col {
+    min-height: 240px;
+  }
+
+  .channel-partner-success .icon-success {
+    margin: 0 auto 23px;
+  }
+
+  .channel-partner-success .button-wrapper {
+    margin: 15px 0 0;
+  }
+
+  .channel-partner-success .button.primary::after {
+    left: -16px;
+  }
+}
+
+/* Glossary selectors are scoped to their own section styles, so ordering against the
+   unrelated section rules above does not matter. */
+/* stylelint-disable no-descending-specificity */
+
+/* ================= Glossary page section styles =================
+   glossary-spotlight · subscribe-band · press-feed
+   In the image-backed styles the section's first authored image is the band background. */
+
+main .section.glossary-spotlight,
+main .section.subscribe-band {
+  position: relative;
+  isolation: isolate;
+  padding-inline: var(--section-padding-x);
+}
+
+main .section.glossary-spotlight > div,
+main .section.subscribe-band > div {
+  max-width: calc(var(--container-max-width) - 2 * var(--section-padding-x));
+  margin: 0 auto;
+}
+
+main .section.glossary-spotlight > .default-content-wrapper:first-child > p:first-child:has(> picture),
+main .section.subscribe-band > .default-content-wrapper:first-child > p:first-child:has(> picture) {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: 0;
+}
+
+main .section.glossary-spotlight > .default-content-wrapper:first-child > p:first-child:has(> picture) img,
+main .section.subscribe-band > .default-content-wrapper:first-child > p:first-child:has(> picture) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Word spotlight ── */
+main .section.glossary-spotlight {
+  padding-block: var(--spacing-08);
+  background-color: var(--green-secondary-lightest);
+}
+
+main .section.glossary-spotlight .columns > div {
+  gap: var(--spacing-06);
+}
+
+main .section.glossary-spotlight .columns p {
+  margin: 0;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+
+main .section.glossary-spotlight .columns > div > div:first-child p:first-child {
+  color: var(--midnight-medium);
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+main .section.glossary-spotlight .columns h2 {
+  margin: var(--spacing-02) 0 0;
+  color: var(--dark-teal);
+  font-family: var(--font-syne);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+}
+
+main .section.glossary-spotlight .columns .button-wrapper {
+  margin: var(--spacing-06) 0 0;
+}
+
+main .section.glossary-spotlight .columns .button {
+  display: inline-flex;
+}
+
+main .section.glossary-spotlight .social-share-wrapper {
+  display: flex;
+  margin-top: var(--spacing-06);
+}
+
+/* ── Subscribe band ── */
+main .section.subscribe-band {
+  padding-block: var(--spacing-02);
+  background-color: var(--spring-green-primary);
+}
+
+main .section.subscribe-band .columns > div {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-05);
+}
+
+main .section.subscribe-band .columns h2 {
+  margin: 0;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-xsmall);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+}
+
+main .section.subscribe-band .columns > div > div:last-child {
+  flex: 0 0 auto;
+}
+
+main .section.subscribe-band .columns .button-wrapper {
+  margin: 0;
+}
+
+main .section.subscribe-band .columns .button {
+  min-height: 32px; /* literal: compact source band button (mobile) */
+  padding: var(--spacing-02) var(--spacing-05);
+  font-size: var(--fs-xsmall);
+}
+
+/* ── Press feed: heading, newsroom column and shared blogs fragment ── */
+main .section.press-feed {
+  padding: var(--spacing-09) var(--spacing-09) var(--spacing-14);
+}
+
+main .section.press-feed > div {
+  max-width: calc(var(--container-max-width) - 2 * var(--section-padding-x));
+  margin: 0 auto;
+}
+
+main .section.press-feed > .default-content-wrapper h2,
+main .section.press-feed > .richtext-wrapper h2 {
+  margin: 0 0 var(--spacing-07);
+  color: var(--color-foreground);
+  font-family: var(--font-syne);
+  font-size: var(--fs-large);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+}
+
+main .section.press-feed .latest-announcements-wrapper h2 {
+  margin-top: 0;
+}
+
+main .section.press-feed .latest-announcements-list {
+  margin: 0;
+}
+
+/* the block has no item-count option; the source column lists four releases */
+main .section.press-feed .latest-announcements-list li:nth-child(n + 5) {
+  display: none;
+}
+
+main .section.press-feed .latest-announcements-list a {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-small);
+  font-weight: var(--weight-light);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+main .section.press-feed .latest-announcements-date {
+  margin: var(--spacing-01) 0 0;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-xsmall);
+  font-weight: var(--weight-light);
+  line-height: 1.33;
+}
+
+main .section.press-feed .latest-announcements-readmore a {
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-xsmall);
+  text-transform: uppercase;
+}
+
+main .section.press-feed .fragment-wrapper {
+  margin-top: var(--spacing-07);
+}
+
+main .section.press-feed .fragment .section {
+  padding: 0;
+}
+
+main .section.press-feed .fragment .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-05);
+  margin-bottom: var(--spacing-06);
+}
+
+main .section.press-feed .fragment .default-content-wrapper h2 {
+  margin: 0;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-h4);
+  font-weight: var(--weight-medium);
+  line-height: 1.25;
+}
+
+main .section.press-feed .fragment .default-content-wrapper p {
+  margin: 0;
+}
+
+/* Blogs READ MORE: same growing-arrow link as latest-announcements "Read More" */
+main .section.press-feed .fragment .default-content-wrapper a {
+  position: relative;
+  padding-right: 42px; /* literal: source arrow area: 10px gap, 16px arrow, 16px after it */
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-xsmall);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.06em; /* literal: source letter spacing */
+  line-height: 1.26; /* literal: source line height */
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+main .section.press-feed .fragment .default-content-wrapper a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 32px);
+  width: 16px;
+  height: 2px;
+  background: var(--highlight-green);
+  transform: translateY(-50%);
+  transition: width 0.4s ease;
+}
+
+main .section.press-feed .fragment .default-content-wrapper a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  box-sizing: content-box;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid var(--highlight-green);
+  border-right: 2px solid var(--highlight-green);
+  transform: translateY(-50%) rotate(45deg);
+  transition: right 0.4s ease;
+}
+
+main .section.press-feed .fragment .default-content-wrapper a:hover::before,
+main .section.press-feed .fragment .default-content-wrapper a:focus-visible::before {
+  width: 25px;
+}
+
+main .section.press-feed .fragment .default-content-wrapper a:hover::after,
+main .section.press-feed .fragment .default-content-wrapper a:focus-visible::after {
+  right: 6px;
+}
+
+main .section.press-feed .cards .card {
+  height: 100%;
+  border: 1px solid var(--linen-primary);
+  background-color: var(--color-white);
+}
+
+main .section.press-feed .cards .cards-card-image img {
+  aspect-ratio: 4 / 3; /* literal: source blog thumbnails are 302 x 226 */
+  height: auto;
+  object-fit: cover;
+}
+
+main .section.press-feed .cards .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--spacing-06);
+}
+
+main .section.press-feed .cards .cards-card-description {
+  display: contents;
+}
+
+main .section.press-feed .cards .cards-card-description p {
+  margin: 0;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-xsmall);
+  font-weight: var(--weight-light);
+  line-height: 1.33;
+}
+
+main .section.press-feed .cards .cards-card-description p:first-child {
+  order: -1;
+  color: var(--midnight-medium);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+main .section.press-feed .cards .cards-card-title {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: var(--spacing-04) 0 var(--spacing-06);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-base);
+  font-weight: var(--weight-medium);
+  line-height: 1.3;
+}
+
+@media (width >= 992px) {
+  main .section.glossary-spotlight .columns > div {
+    align-items: flex-start;
+    gap: var(--spacing-07);
+  }
+
+  main .section.glossary-spotlight .columns > div > div:first-child {
+    flex: 0 0 18%;
+  }
+
+  main .section.glossary-spotlight .columns h2 {
+    font-size: var(--fs-large);
+    line-height: 1;
+  }
+
+  main .section.glossary-spotlight .columns p {
+    font-size: var(--fs-h3);
+  }
+
+  main .section.glossary-spotlight .columns > div > div:first-child p:first-child {
+    font-size: var(--fs-small);
+  }
+
+  main .section.glossary-spotlight .columns .button-wrapper {
+    margin-top: var(--spacing-04);
+  }
+
+  /* share links sit on the KNOW MORE row, right-aligned (as on the source) */
+  main .section.glossary-spotlight .social-share-wrapper {
+    justify-content: flex-end;
+    margin-top: -28px; /* literal: bottom-aligns the 28px share row with the KNOW MORE button */
+  }
+
+  main .section.subscribe-band .columns h2 {
+    font-size: var(--fs-h3);
+    line-height: 1.3;
+  }
+
+  main .section.subscribe-band .columns .button {
+    min-height: 48px; /* literal: source band button height */
+    padding: var(--spacing-04) 64px var(--spacing-04) var(--spacing-05); /* literal: global button arrow area */
+    font-size: var(--fs-small);
+  }
+
+  main .section.press-feed {
+    display: grid;
+    grid-template-columns: minmax(0, 23.6%) minmax(0, 1fr); /* literal: source column split 302/1280 */
+    column-gap: var(--spacing-05);
+    align-items: start;
+    padding-inline: max(var(--section-padding-x), calc((100% - var(--container-max-width)) / 2 + var(--section-padding-x)));
+  }
+
+  main .section.press-feed > div {
+    max-width: none;
+    margin: 0;
+  }
+
+  main .section.press-feed > .default-content-wrapper,
+  main .section.press-feed > .richtext-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  main .section.press-feed .fragment-wrapper {
+    margin-top: 0;
+  }
+
+  main .section.press-feed > .default-content-wrapper h2,
+  main .section.press-feed > .richtext-wrapper h2 {
+    font-size: var(--fs-xlarge);
+    line-height: 1;
+  }
+
+  main .section.press-feed .latest-announcements-list a {
+    font-size: var(--fs-h4);
+    line-height: 1.22;
+  }
+
+  main .section.press-feed .latest-announcements-date,
+  main .section.press-feed .latest-announcements-readmore a {
+    font-size: var(--fs-small);
+  }
+
+  main .section.press-feed .latest-announcements-date {
+    margin-top: var(--spacing-02);
+    line-height: 1.15;
+  }
+
+  main .section.press-feed .fragment .default-content-wrapper h2 {
+    font-size: var(--fs-h1);
+  }
+
+  main .section.press-feed .fragment .default-content-wrapper a {
+    font-size: var(--fs-small);
+  }
+
+  main .section.press-feed .cards .cards-card-description p {
+    font-size: var(--fs-small);
+    line-height: 1.3;
+  }
+
+  main .section.press-feed .cards .cards-card-title {
+    font-size: var(--fs-h3);
+  }
+
+  /* contact band (style solar-feature-title) on glossary index and term pages: CTA right-aligned */
+  main:has(> .section.glossary-hero, > .section.glossary-term) .section.solar-feature-title .columns > div > div:last-child {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  main:has(> .section.glossary-hero, > .section.glossary-term) .section.solar-feature-title {
+    padding-block: 47px; /* literal: source contact band padding */
+  }
+}
+
+@media (width >= 1200px) {
+  main .section.glossary-spotlight {
+    padding-block: var(--spacing-09);
+  }
+
+  /* source band content runs from 206px to 1315px of the 1440px layout */
+  main .section.subscribe-band {
+    padding: var(--spacing-05) 125px var(--spacing-05) 206px; /* literal: source band insets */
+  }
+
+  main .section.subscribe-band > div {
+    max-width: none;
+  }
+
+  main .section.press-feed {
+    padding-top: var(--spacing-07);
+    padding-bottom: var(--spacing-12);
+  }
+
+  main .section.press-feed .cards .cards-card-body {
+    padding: var(--spacing-05);
+  }
+
+  main .section.press-feed .cards .cards-card-title {
+    margin-bottom: var(--spacing-04);
+  }
+}
+
+/* ── CTA banner (style: cta-banner): heading | divider | text + button ──
+   First authored image = background; an optional second image = mobile background. */
+main .section.cta-banner {
+  position: relative;
+  isolation: isolate;
+  padding: 32px 16px; /* literal: source banner padding (mobile/tablet) */
+  background-color: var(--green-primary);
+}
+
+main .section.cta-banner > div {
+  max-width: calc(var(--container-max-width) - 2 * var(--section-padding-x));
+  margin: 0 auto;
+}
+
+main .section.cta-banner > .default-content-wrapper:first-child > p:has(> picture) {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: 0;
+}
+
+main .section.cta-banner > .default-content-wrapper:first-child > p:has(> picture) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* two images: the first is shown from 600px, the second below 600px */
+main .section.cta-banner > .default-content-wrapper:first-child > p:has(> picture):has(+ p > picture) {
+  display: none;
+}
+
+main .section.cta-banner .columns > div {
+  gap: 16px; /* literal: source column gap (mobile/tablet) */
+}
+
+main .section.cta-banner .columns h2 {
+  margin: 16px 0 0; /* literal: source heading spacing (mobile/tablet) */
+  color: var(--ivory-primary);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+}
+
+main .section.cta-banner .columns p {
+  margin: 0;
+  color: var(--ivory-primary);
+  font-family: var(--font-outfit);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+
+/* the source button is an inline span inside a 24px line box: it overflows the text column by
+   9px (mobile) / 16px (desktop), which the negative bottom margin reproduces */
+main .section.cta-banner .columns .button-wrapper {
+  display: flex;
+  margin: 19px 0 -9px; /* literal: source spacing above the button and its overflow (mobile) */
+}
+
+main .section.cta-banner .columns .button {
+  display: inline-flex;
+  min-height: 0;
+  padding: 11px 24px 11px 32px; /* literal: source button width 182.3px with the arrow (mobile) */
+  border-width: 1px;
+  background-image: linear-gradient(90deg, #e4f7ff 50%, transparent 0); /* literal: source fill */
+  color: var(--color-white);
+  font-weight: var(--weight-regular);
+  letter-spacing: normal;
+  line-height: 18px; /* literal: source button height 42px (mobile) */
+  text-transform: none;
+}
+
+/* arrow as on the source: a short dark-green arrow ~6px after the label (line + chevron) */
+main .section.cta-banner .columns .button::before {
+  width: 11px; /* literal: source arrow length */
+  margin-left: 6px; /* literal: source gap between label and arrow */
+  background: var(--highlight-green);
+}
+
+main .section.cta-banner .columns .button::after {
+  width: 5px;
+  height: 5px;
+  left: -7px;
+  border-color: var(--highlight-green);
+}
+
+main .section.cta-banner .columns .button:hover,
+main .section.cta-banner .columns .button:active {
+  color: var(--green-primary);
+}
+
+main .section.cta-banner .columns .button:hover::before,
+main .section.cta-banner .columns .button:active::before {
+  width: 19px;
+}
+
+/* below 992px the arrow is in the flow: the inset gives up the 8px the line grows on hover */
+@media (width < 992px) {
+  main .section.cta-banner .columns .button:hover,
+  main .section.cta-banner .columns .button:active {
+    padding-right: 16px;
+  }
+}
+
+@media (width >= 600px) {
+  main .section.cta-banner > .default-content-wrapper:first-child > p:has(> picture):has(+ p > picture) {
+    display: block;
+  }
+
+  main .section.cta-banner > .default-content-wrapper:first-child > p:has(> picture) + p:has(> picture) {
+    display: none;
+  }
+}
+
+@media (width >= 992px) {
+  main .section.cta-banner .columns > div {
+    align-items: flex-start;
+    gap: 32px; /* literal: source column gap (desktop) */
+  }
+
+  /* both columns are content-sized and shrink in proportion to fit the row (flex 0 1 auto, as on
+     the source), so the split follows the heading and text lengths: e.g. 397.5 | 850.5px for
+     "Step into the future of energy", 459.7 | 788.3px for "More than electricity..." at 1440px */
+  main .section.cta-banner .columns > div > div {
+    flex: 0 1 auto;
+  }
+
+  /* vertical divider right of the heading: on the source the inset and border sit on the heading
+     box (not on the column), so they count in the shrink weighting and the divider is as tall as
+     the heading */
+  main .section.cta-banner .columns > div > div:first-child h2 {
+    box-sizing: border-box;
+    padding-right: 32px; /* literal: source heading inset */
+    border-right: 1px solid var(--gray-10);
+  }
+
+  main .section.cta-banner .columns h2 {
+    margin-top: var(--spacing-02);
+    font-size: var(--fs-large);
+  }
+
+  main .section.cta-banner .columns p {
+    font-size: var(--fs-h4);
+  }
+
+  main .section.cta-banner .columns .button-wrapper {
+    margin: 23px 0 -16px; /* literal: source spacing above the button and its overflow (desktop) */
+  }
+
+  main .section.cta-banner .columns .button {
+    padding: 17px 48px 17px 32px; /* literal: source button insets (desktop) */
+    line-height: 23px; /* literal: source button height 59px (desktop) */
+  }
+
+  /* arrow in the right inset, just after the label (line + chevron, both 8px further on hover) */
+  main .section.cta-banner .columns .button::before {
+    left: calc(100% - 41px);
+    margin-left: 0;
+  }
+
+  main .section.cta-banner .columns .button::after {
+    right: 31px;
+    left: unset;
+  }
+
+  main .section.cta-banner .columns .button:hover::after,
+  main .section.cta-banner .columns .button:active::after {
+    right: 23px;
+  }
+}
+
+@media (width >= 992px) {
+  main .section.cta-banner {
+    padding: 45px 80px; /* literal: source banner padding (desktop) */
+  }
+}
+
+/* Blogs fragment in the press feed: on small screens the source scrolls the cards sideways
+   without prev/next arrows (300px cards, 16px apart); the cards block's mobile nav is hidden */
+@media (width <= 599px) {
+  main .section.press-feed .cards .cards-grid-mobile-nav {
+    display: none;
+  }
+
+  main .section.press-feed .cards.cards-grid-mobile-carousel .cards-grid {
+    gap: 16px; /* literal: source card gap (mobile) */
+  }
+
+  main .section.press-feed .cards.cards-grid-mobile-carousel .cards-grid .card,
+  main .section.press-feed .cards.cards-grid-mobile-carousel .cards-grid .card-link {
+    flex: 0 0 300px; /* literal: source card width (mobile) */
+  }
+}
+
+/* ── Blogs strip on glossary term pages (related-blogs, query index source) ──
+   Text-only cards as on the source: tag | title | date in a linen outline. */
+main:has(> .section.glossary-term) .section.related-blogs-container {
+  padding: 40px 16px 48px; /* literal: source strip spacing (mobile/tablet) */
+}
+
+main:has(> .section.glossary-term) .section.related-blogs-container > div {
+  max-width: calc(var(--container-max-width) - 160px); /* literal: 80px insets (desktop) */
+  margin: 0 auto;
+}
+
+main:has(> .section.glossary-term) .related-blogs {
+  padding-block: 0;
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-header {
+  margin-bottom: 24px; /* literal: source heading to cards spacing (mobile/tablet) */
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-title > * {
+  color: var(--color-foreground);
+  font-size: var(--fs-h1);
+  line-height: 28px; /* literal: source heading line height (mobile) */
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-view-all {
+  gap: 14px; /* literal: the source label ends 30px before the link edge (16px arrow) */
+  margin-top: 0;
+  color: var(--color-foreground);
+  font-size: var(--fs-xsmall);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.8px; /* literal: source letter spacing */
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-view-all-label {
+  line-height: 1.2;
+}
+
+main:has(> .section.glossary-term) .related-blogs .cards-card-image {
+  display: none;
+}
+
+main:has(> .section.glossary-term) .related-blogs .card {
+  box-sizing: border-box;
+  height: 100%;
+  border: 1px solid var(--linen-primary);
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-card-body {
+  gap: 0;
+  padding: 16px; /* literal: source card insets (mobile/tablet) */
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-card-tag {
+  color: var(--midnight-medium);
+  font-size: var(--fs-xsmall);
+  letter-spacing: normal;
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-card-title {
+  margin: 8px 0 16px; /* literal: source title spacing (mobile/tablet) */
+  color: var(--color-foreground);
+  font-size: var(--fs-base);
+  line-height: 1.3;
+}
+
+main:has(> .section.glossary-term) .related-blogs .related-blogs-card-date {
+  color: var(--color-foreground);
+  font-size: var(--fs-xsmall);
+  opacity: 1;
+}
+
+@media (width <= 992px) {
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-grid {
+    gap: 16px; /* literal: source card gap (mobile/tablet) */
+  }
+}
+
+@media (width >= 992px) {
+  main:has(> .section.glossary-term) .section.related-blogs-container {
+    padding: 60px 80px; /* literal: source strip spacing (desktop) */
+  }
+
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-header {
+    margin-bottom: 12px; /* literal: source heading to cards spacing (desktop) */
+  }
+
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-title {
+    max-width: none;
+  }
+
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-title > * {
+    font-size: var(--fs-xlarge);
+    line-height: 1;
+  }
+
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-view-all {
+    font-size: var(--fs-h4);
+  }
+
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-card-body {
+    padding: 24px 24px 25px; /* literal: source card insets (desktop) */
+  }
+
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-card-tag,
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-card-date {
+    font-size: var(--fs-small);
+  }
+
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-card-title {
+    margin-block: 16px; /* literal: source title spacing (desktop) */
+    font-size: var(--fs-h3);
+  }
+}
+
+@media (width >= 993px) {
+  main:has(> .section.glossary-term) .related-blogs .related-blogs-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column; /* more than 4 cards stay in one row, as on the source */
+    gap: 24px; /* literal: source card gap (desktop) */
+  }
+}
+
+/* stylelint-enable no-descending-specificity */
+
+/* stylelint-disable no-descending-specificity */
+
+/* ── Event About Section ────────────────────────────────────── */
+
+/* Note: stylelint-disable is used below because .section.event-about has
+   equal specificity to other .section.* selectors but appears after
+   higher-specificity selectors like .section.home-page-bottom-section.richtext-container
+   in the file. Reordering would break the logical grouping of selectors. */
+
+.section.event-about {
+  background: #051f23;
+  overflow: hidden;
+}
+
+.section.event-about .columns-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section.event-about .columns>div>div:first-child {
+  flex: 0 0 65%;
+  padding: 80px 70px 80px 80px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section.event-about .columns-img-col {
+  flex: 0 0 35%;
+  min-height: 500px;
+}
+
+.section.event-about h2 {
+  grid-area: heading;
+  margin: 0;
+  line-height: 1.1;
+  font-size: 48px;
+  font-family: var(--font-syne);
+  font-weight: var(--weight-semibold);
+  color: var(--ivory-primary);
+}
+
+/* highlight any italic text in heading */
+.section.event-about h2 em {
+  color: var(--theme-accent);
+  font-style: normal;
+}
+
+.section.event-about p:first-of-type {
+  grid-area: desc;
+  margin: 16px 0 0;
+  font-size: 20px;
+  font-weight: var(--weight-light);
+  line-height: 130%;
+  color: var(--ivory-primary);
+}
+
+/* Stats Grid */
+
+.section.event-about ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.section.event-about ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  color: var(--ivory-primary);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.section.event-about ul li::marker {
+  display: none;
+  content: '';
+}
+
+.section.event-about ul li strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 32px;
+  font-weight: var(--weight-regular);
+  line-height: 1;
+  color: var(--ivory-primary);
+}
+
+/* image */
+.section.event-about .columns > div {
+  display: flex;
+  min-height: 500px;
+  align-items: stretch;
+}
+
+.section.event-about .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section.event-about .columns-img-col picture {
+  display: block;
+  height: 100%;
+}
+
+@media (width <=599px) {
+  .section.event-about .columns>div {
+    flex-direction: column;
+  }
+
+  .section.event-about ul li {
+      font-size: 12px;
+  }
+
+  .section.event-about .columns>div>div:first-child {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  order: 1;
+}
+
+  .section.event-about p:first-of-type {
+    font-size: var(--fs-base);
+    padding-top: 8px;
+  }
+
+  .section.event-about h2 {
+    font-size: var(--fs-large);
+    line-height: 100%;
+  }
+
+  .section.event-about ul {
+    grid-template-columns: repeat(1, 1fr);;
+    gap: 24px;
+  }
+
+  .section.event-about ul li strong {
+    font-size: 24px;
+  }
+
+  .section.event-about .columns-img-col {
+    min-height: 240px;
+    order: 2;
+  }
+}
+
+@media (width >= 600px) and (width < 992px) {
+  .section.event-about .columns > div {
+    flex-direction: column;
+  }
+
+  .section.event-about .columns > div > div:first-child {
+  order: 1;
+  flex: none;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+  .section.event-about .columns-img-col {
+    order: 2;
+    flex: none;
+    min-height: 400px;
+  }
+
+  .section.event-about h2 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .section.event-about p:first-of-type {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .section.event-about ul {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  }
+
+  .section.event-about ul li strong {
+    font-size: 28px;
+  }
+
+  .section.event-about .columns-img-col img,
+  .section.event-about .columns-img-col picture {
+    height: 100%;
+  }
+}

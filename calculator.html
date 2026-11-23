@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Estimate rooftop solar system size, subsidy, payback and electricity savings.">
+    <title>Solar calculators · SOLAROOF Guide</title>
+    <link rel="icon" type="image/svg+xml" href="./icon.svg">
+    <link rel="stylesheet" href="./assets/site.css?v=a707aba00203">
+    <script src="./assets/config.js" defer></script>
+    <script src="./assets/site.js?v=fc63ae8d440b" defer></script>
+</head>
+<body >
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+        <a href="./index.html" class="brand header-brand" aria-label="Tata Power Solar Rooftop home">
+            <img class="brand-mark" src="./images/whait_logo-tatapower.svg" alt="" aria-hidden="true">
+    </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle main navigation" aria-expanded="false" aria-controls="primary-nav">
+            <img src="./icon/header-hamburger.svg" alt="" aria-hidden="true">
+        </button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+<a href="./calculator.html" aria-current="page">Calculator</a>
+<a href="./resources.html">Resources</a>
+<a href="./about.html">About</a>
+<a href="./contact.html">Contact</a>
+        <a class="nav-cta" href="./contact.html">Request a consultation</a>
+    </nav>
+</header>
+<main id="main-content" class="page-shell">
+<section class="page-hero">
+    <p class="eyebrow">Interactive planning tools</p>
+    <h1>Estimate your rooftop solar system</h1>
+    <p>Compare a bill-based system estimate with subsidy and payback scenarios. Results are indicative and depend on site conditions and current rules.</p>
+</section>
+<div class="calculator-page-content">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-583533eb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="583533eb" data-element_type="section" data-e-type="section" id="solar-calculator" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-container elementor-column-gap-default"><div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2fe4607a" data-id="2fe4607a" data-element_type="column" data-e-type="column"><div class="elementor-widget-wrap elementor-element-populated"><div class="elementor-element elementor-element-1175d15c elementor-widget elementor-widget-heading" data-id="1175d15c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">Solar Cost Calculator &amp; Savings Estimator</h2></div></div><div class="elementor-element elementor-element-11256cb0 elementor-widget elementor-widget-html" data-id="11256cb0" data-element_type="widget" data-e-type="widget" data-widget_type="html.default"><div class="elementor-widget-container"><div style="margin-top: 10px; margin-bottom: 25px;"><p style="font-size: 16px; line-height: 1.8; color: #334155; margin-bottom: 24px;">
+Use our engineering-grade solar calculator to estimate the optimal system capacity for your home or business, project your turnkey capital outlay before and after applicable PM Surya Ghar subsidies, and forecast your monthly electricity savings and simple payback period.</p><div style="background: #FFFFFF; border: 2px solid #0F766E; border-radius: 12px; padding: 28px 24px; box-shadow: 0 10px 25px -5px rgba(15,118,110,0.12);"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;"><div><h3 style="margin: 0 0 18px; font-size: 20px; color: #0B3B2C; font-weight: 700; border-bottom: 2px solid #E2E8F0; padding-bottom: 10px;">
+1. Enter Your Electrical Consumption</h3><div style="margin-bottom: 18px;">
+<label for="calcBill" style="display: block; font-size: 14px; font-weight: 600; color: #1E293B; margin-bottom: 6px;">
+Average Monthly Electricity Bill (₹):
+</label>
+<input type="number" id="calcBill" value="3000" min="500" step="100" style="width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 16px; border: 1px solid #CBD5E1; border-radius: 6px; outline: none; background: #F8FAFC; color: #0F172A; font-weight: 600;"><div style="font-size: 12px; color: #64748B; margin-top: 4px;">Standard residential range: ₹1,500 – ₹12,000/month.</div></div><div style="margin-bottom: 18px;">
+<label for="calcTariff" style="display: block; font-size: 14px; font-weight: 600; color: #1E293B; margin-bottom: 6px;">
+Electricity Tariff (₹ per kWh / Unit):
+</label>
+<input type="number" id="calcTariff" value="7.5" min="3" max="18" step="0.5" style="width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 16px; border: 1px solid #CBD5E1; border-radius: 6px; outline: none; background: #F8FAFC; color: #0F172A; font-weight: 600;"><div style="font-size: 12px; color: #64748B; margin-top: 4px;">Typical Indian residential tariff: ₹6.50 – ₹9.50/unit; Commercial: ₹10 – ₹13.</div></div><div style="margin-bottom: 18px;">
+<label for="calcSystemType" style="display: block; font-size: 14px; font-weight: 600; color: #1E293B; margin-bottom: 6px;">
+System Architecture:
+</label>
+<select id="calcSystemType" style="width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 15px; border: 1px solid #CBD5E1; border-radius: 6px; outline: none; background: #F8FAFC; color: #0F172A; font-weight: 600;"><option value="ongrid" selected>On-Grid (Most Economical / Subsidy Eligible)</option><option value="hybrid">Hybrid (Grid + Lithium Battery Backup)</option><option value="offgrid">Off-Grid (Stand-Alone Battery Bank)</option>
+</select></div><div style="margin-bottom: 18px;">
+<label for="calcCustomCapacity" style="display: block; font-size: 14px; font-weight: 600; color: #1E293B; margin-bottom: 6px;">
+System Capacity Selection:
+</label>
+<select id="calcCustomCapacity" style="width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 15px; border: 1px solid #CBD5E1; border-radius: 6px; outline: none; background: #F8FAFC; color: #0F172A; font-weight: 600;"><option value="auto" selected>Auto-Calculate (Based on Electricity Bill)</option><option value="1">1 kW System</option><option value="2">2 kW System</option><option value="3">3 kW System (Recommended Standard)</option><option value="4">4 kW System</option><option value="5">5 kW System</option><option value="7.5">7.5 kW System</option><option value="10">10 kW System</option>
+</select></div><div style="margin-bottom: 22px; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px 14px; border-radius: 6px;">
+<label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+<input type="checkbox" id="calcSubsidyEligible" checked style="margin-top: 3px; width: 18px; height: 18px; accent-color: #0F766E;">
+<span style="font-size: 13px; color: #334155; line-height: 1.5;">
+<strong>PM Surya Ghar Subsidy Eligible:</strong> Residential individual property with independent roof. (Uncheck for Commercial, Industrial, or Non-subsidy sites).
+</span>
+</label></div><div style="display: flex; gap: 12px;">
+<button type="button" id="calcResetBtn" style="padding: 10px 18px; background: #E2E8F0; color: #475569; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Reset Default</button></div></div><div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 10px; padding: 22px;"><h3 style="margin: 0 0 16px; font-size: 20px; color: #0B3B2C; font-weight: 700; border-bottom: 2px solid #E2E8F0; padding-bottom: 10px;">
+2. Estimated System Sizing & Economics</h3><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;"><div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 6px; padding: 12px;"><div style="font-size: 12px; color: #64748B;">Recommended Capacity:</div><div id="resCapacity" style="font-size: 22px; font-weight: 800; color: #0B3B2C; margin-top: 2px;">3 kW</div></div><div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 6px; padding: 12px;"><div style="font-size: 12px; color: #64748B;">Usable Roof Area:</div><div id="resRoofSpace" style="font-size: 18px; font-weight: 700; color: #1E293B; margin-top: 2px;">~270 sq.ft</div></div></div><div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; margin-bottom: 16px;"><div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+<span style="color: #64748B;">Gross Turnkey Cost:</span>
+<strong id="resGrossCost" style="color: #1E293B;">₹1,85,000</strong></div><div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+<span style="color: #16A34A;">PM Surya Ghar Subsidy:</span>
+<strong id="resSubsidy" style="color: #16A34A;">-₹78,000</strong></div><div style="display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px solid #E2E8F0; font-size: 16px;">
+<span style="color: #0B3B2C; font-weight: 700;">Net Estimated Outlay:</span>
+<strong id="resNetCost" style="color: #065F46; font-size: 19px;">₹1,07,000</strong></div></div><div style="background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; padding: 16px; margin-bottom: 16px;"><div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+<span style="color: #065F46;">Monthly Generation:</span>
+<strong id="resMonthlyGen" style="color: #064E3B;">390 Units (kWh)</strong></div><div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+<span style="color: #065F46;">Monthly Bill Savings:</span>
+<strong id="resMonthlySave" style="color: #064E3B;">₹2,925</strong></div><div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+<span style="color: #065F46;">Annual Electricity Savings:</span>
+<strong id="resAnnualSave" style="color: #064E3B;">₹35,100</strong></div><div style="display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px solid #A7F3D0; font-size: 15px;">
+<span style="color: #065F46; font-weight: 700;">Simple Payback Period:</span>
+<strong id="resPayback" style="color: #0B3B2C; font-size: 18px; font-weight: 800;">3.0 Years</strong></div></div><div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 6px; padding: 12px; font-size: 13px; color: #475569;"><div style="display: flex; justify-content: space-between;">
+<span>Estimated 25-Year Net Savings:</span>
+<strong id="resLifetimeSave" style="color: #0B3B2C; font-weight: 700;">₹8,77,500</strong></div><div style="font-size: 11px; color: #94A3B8; margin-top: 4px;">Assumes 0.5% annual degradation & 3% annual utility tariff escalation.</div></div></div></div></div>
+<div style="margin-top: 18px; font-size: 13px; color: #64748B; line-height: 1.6;">
+<em>Methodology Disclaimer: Sizing formulas assume standard daily specific yield of 4.33 kWh/kWp/day (~130 kWh/kWp/month) under unshaded South-facing orientation. Turnkey equipment rates incorporate ALMM DCR modules, IP65 inverter, HDG structure, and turnkey DISCOM net-metering liaisoning. Actual savings and payback depend on self-consumption ratio, state net-metering banking settlement rules, and local DISCOM approved solar sanctioned load.</em></div></div></div></div></div></div></div></section>
+
+<div class="sub-inner"><h4>Quick Subsidy Estimator</h4><div class="sub-form"><div><label>System Size (kW)</label><input type="number" id="subsidyKw" placeholder="e.g. 3"></div>
+<button>Calculate</button><div class="sub-result"><span class="sr-lbl">Estimated Subsidy</span><span class="sr-val" id="subsidyResult">₹ --</span></div></div></div>
+
+<div class="roi-calc"><div class="calc-header"><h2><span class="material-symbols-outlined" style="font-size:30px;vertical-align:middle;margin-right:8px;">calculate</span>ROI &amp; Payback Period Calculator</h2><p>Estimate your savings and break-even point for 2026 solar installations in India.</p></div><div class="calc-body"><div class="calc-inputs">
+<label class="calc-label">System Size (kW) — <span id="kwDisplay" style="color:#195ec8;">5 kW</span></label>
+<input type="range" class="calc-range" min="1" max="100" value="5" id="roiKw"><div class="calc-range-labels"><span>1 kW</span><span>100 kW</span></div>
+<br><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;"><div>
+<label class="calc-label">State</label>
+<select class="calc-input" id="roiState"><option value="5.9">Rajasthan</option><option value="5.8">Gujarat</option><option value="5.2">Maharashtra</option><option value="5.4">Karnataka</option><option value="5.5">Tamil Nadu</option><option value="4.5">Delhi (UT)</option><option value="4.8">Kerala</option><option value="5.3">Telangana</option><option value="5.5">Madhya Pradesh</option><option value="5.0">Uttar Pradesh</option>
+</select></div><div>
+<label class="calc-label">Monthly Bill (₹)</label>
+<input type="number" class="calc-input" id="roiBill" value="4500"></div></div>
+<label class="calc-label">System Type</label><div class="calc-toggle">
+<button class="active">On-Grid</button>
+<button>Off-Grid</button>
+<button>Hybrid</button></div><div class="subsidy-check"><div style="display:flex;align-items:center;gap:8px;">
+<span class="material-symbols-outlined" style="color:#195ec8;font-size:22px;">redeem</span>
+<span style="font-family:Inter;font-size:14px;font-weight:600;">Apply PM Surya Ghar Subsidy?</span></div><div class="toggle" id="subsidyToggle" style="cursor:pointer;"></div></div></div><div class="calc-results"><h4 class="result-label" style="margin-bottom:20px;">Investment Summary</h4><div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;">
+<span style="font-family:Inter;font-size:14px;color:#424753;">Estimated Cost</span>
+<span style="font-family:'Hanken Grotesk';font-size:18px;font-weight:700;" id="rTotalCost">₹2,40,000</span></div><div class="result-savings">
+<span class="rs-label">Post-Subsidy Cost</span>
+<span class="rs-value" id="rSubCost">₹1,62,000</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 0;border-top:1px solid #c2c6d5;"><div><span class="result-label">Monthly Savings</span><br><span class="result-main" style="font-size:20px;" id="rMonthlySave">₹4,200</span></div><div><span class="result-label">Annual Savings</span><br><span class="result-main" style="font-size:20px;" id="rAnnualSave">₹50,400</span></div></div><div class="result-box"><div class="rb-label">Estimated Payback Period</div><div class="rb-value" id="rPayback">3.2 Years</div></div><div style="text-align:center;padding-top:8px;">
+<span class="result-label">25-Year Lifetime Savings</span><br>
+<span style="font-family:'Hanken Grotesk';font-size:26px;font-weight:700;color:#855300;" id="rLifetime">₹18.5 Lakhs+</span></div></div></div><div style="padding:14px 24px;background:#F8FAFC;border-top:1px solid #c2c6d5;text-align:center;"><p style="font-size:12px;color:#737784;font-style:italic;font-family:Inter;margin:0;">
+*These are estimates. For precise calculations, <a href="https://academy.tatapower.solar/" style="color:#0046a1;font-weight:700;">enroll in our Solar Design course</a> where you'll learn professional tools like PVsyst and Helioscope.</p></div></div>
+
+</div>
+<section class="content-card">
+    <h2>Before acting on an estimate</h2>
+    <p>Confirm the tariff, generation assumptions, subsidy eligibility and technical feasibility with your DISCOM and a qualified installer.</p>
+    <a class="button button-primary" href="./contact.html">Request a consultation</a>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-brand">
+        <a href="./index.html" class="brand footer-brand-link" aria-label="Rooftop Solar Guide home">
+            <img class="footer-wordmark" src="./tatasolarfoof.svg" alt="" aria-hidden="true">
+        </a>
+        <p>Independent educational guidance for planning rooftop solar in India.</p>
+        <a class="footer-whatsapp" href="https://wa.me/916383061332?text=Hello%2C%20I%20have%20a%20question%20about%20rooftop%20solar." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L4 20l1.1-3.9a8.2 8.2 0 1 1 15.1-4.4Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                <path d="M8.5 8.1c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4-.1.6.5.9 1.2 1.6 2.1 2.1.2.1.4.1.6-.1l.7-.7c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5 0 .3-.2 1.2-.7 1.6-.5.5-1.2.7-2 .5-1.1-.3-2.4-.9-3.7-2.2-1.1-1.1-1.9-2.5-2.1-3.5-.2-.9.1-1.7.7-2.4Z" fill="currentColor"/>
+            </svg>
+            Chat with us on WhatsApp
+        </a>
+        <ul class="footer-social" aria-label="Social media">
+            <li><a href="https://www.youtube.com/@TataPower" data-app-url="vnd.youtube://www.youtube.com/@TataPower" target="_blank" rel="noopener noreferrer" aria-label="Open Tata Power on YouTube" title="YouTube"><img src="./icon/Green-Youtube.svg" alt="" aria-hidden="true"></a></li>
+            <li><a href="https://x.com/tatapower" data-app-url="twitter://user?screen_name=tatapower" target="_blank" rel="noopener noreferrer" aria-label="Open Tata Power on X" title="X / Twitter"><img src="./icon/Green-Twitter.svg" alt="" aria-hidden="true"></a></li>
+            <li><a href="https://www.linkedin.com/company/tata-power/" data-app-url="linkedin://company/tata-power" target="_blank" rel="noopener noreferrer" aria-label="Open Tata Power on LinkedIn" title="LinkedIn"><img src="./icon/Green-LinkedIn.svg" alt="" aria-hidden="true"></a></li>
+            <li><a href="https://www.instagram.com/tatapower/" data-app-url="instagram://user?username=tatapower" target="_blank" rel="noopener noreferrer" aria-label="Open Tata Power on Instagram" title="Instagram"><img src="./icon/Green-Instagram.svg" alt="" aria-hidden="true"></a></li>
+            <li><a href="https://www.facebook.com/TataPower/" data-app-url="fb://profile/TataPower" target="_blank" rel="noopener noreferrer" aria-label="Open Tata Power on Facebook" title="Facebook"><img src="./icon/Green-Facebook.svg" alt="" aria-hidden="true"></a></li>
+        </ul>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+        <a href="./resources.html">Resources</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="#" data-admin-link>Team sign in</a>
+    </nav>
+    <p class="footer-disclaimer">Prices, subsidies and generation are estimates. Confirm current rules with official sources and your DISCOM.</p>
+</footer>
+</body>
+</html>
